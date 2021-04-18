@@ -15,9 +15,6 @@ namespace projektlabor.covid19login.adminpanel.connection
         // Random generator for the nonce
         private static readonly Random RDM_GENERATOR = new Random();
 
-        // Client id to indicate that the requesting user is the covid-login
-        private const int CLIENT_ID = 0;
-
         // Reference to the program-logger
         private readonly Logger log;
 
@@ -46,7 +43,7 @@ namespace projektlabor.covid19login.adminpanel.connection
         /// <param name="privateKey">the rsa-key that is used to encrypt the connection</param>
         /// <exception cref="SocketException">If anything went wrong with the connection</exception>
         /// <exception cref="IOException">If anything went wrong during the handshake</exception>
-        public PLCASocket(Logger log,string host,int port,RSAParameters privateKey) 
+        public PLCASocket(Logger log,RequestData credentials) 
         {
             // Creates the logger
             this.log = log;
@@ -55,10 +52,10 @@ namespace projektlabor.covid19login.adminpanel.connection
             {
                 this.log
                     .Debug("Starting connection to server")
-                    .Critical($"Host={host}; Port={port}");
+                    .Critical($"Host={credentials.Host}; Port={credentials.Port}");
 
                 // Connects to the remote host
-                this.client = new TcpClient(host, port);
+                this.client = new TcpClient(credentials.Host,credentials.Port);
                 this.stream = this.client.GetStream();
             }
             catch (SocketException)
@@ -72,18 +69,19 @@ namespace projektlabor.covid19login.adminpanel.connection
             // Saves the key
             this.rsaService = new RSACryptoServiceProvider();
             // Loads the key
-            this.rsaService.ImportParameters(privateKey);
+            this.rsaService.ImportParameters(credentials.PrivateKey);
 
             // Does the handshake
-            this.DoHandshake();
+            this.DoHandshake(credentials.ClientId);
         }
 
         /// <summary>
         /// Does the secure handshake to establish a secure connection with the server
         /// </summary>
+        /// <param name="clientId">The id that is used to identify the admin on the backend-side</param>
         /// <exception cref="HandshakeException">If the returned message coult not be decrypted (Wrong key is given)</exception>
         /// <exception cref="IOException">If anything went wrong with the I/O</exception>
-        private void DoHandshake()
+        private void DoHandshake(byte clientId)
         {
             // Stores the received data for the aes key (Still encrypted using the rsa-key)
             byte[] aesBytes = new byte[256];
@@ -94,9 +92,9 @@ namespace projektlabor.covid19login.adminpanel.connection
             try
             {
                 // Sends the client-id
-                this.stream.WriteByte(CLIENT_ID);
+                this.stream.WriteByte(clientId);
 
-                this.log.Debug("Send client-id (0)");
+                this.log.Debug("Send client-id").Critical("Id="+clientId);
 
                 // Sends the random nonce
                 this.stream.Write(nonceBytes, 0, nonceBytes.Length);

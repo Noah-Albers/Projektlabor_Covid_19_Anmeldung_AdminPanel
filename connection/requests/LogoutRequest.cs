@@ -20,7 +20,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// Starts the request
         /// </summary>
         /// <param name="userId">The id of the user that shall be loged out</param>
-        public void DoRequest(string host, int port, RSAParameters rsa, int userId)
+        public void DoRequest(RequestData credentials, int userId)
         {
             // Generates the logger
             Logger log = this.GenerateLogger("LogoutRequest");
@@ -30,21 +30,21 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 .Critical("Userid="+userId);
 
             // Starts the request
-            this.DoRequest(log,host, port, rsa, new JObject()
+            this.DoRequest(credentials,log, new JObject()
             {
                 ["id"] = userId
-            }, _ =>
+            }, (_,_2) =>
             {
                 log.Debug("Logout successful");
                 this.OnSuccessfullLogout?.Invoke();
-            }, (a,b)=>this.OnFailure(log,a,b));
+            }, this.OnFailure);
         }
 
         /// <summary>
         /// Error handler
         /// </summary>
         /// <exception cref="Exception">Any exception will be converted into an unknown error</exception>
-        private void OnFailure(Logger log,string err, JObject resp)
+        private void OnFailure(string err, JObject resp, Logger log)
         {
             log
                 .Debug("Logout failed: "+err)

@@ -23,7 +23,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// Starts the request
         /// </summary>
         /// <param name="userId">The id of a user</param>
-        public void DoRequest(string host, int port, RSAParameters rsa, int userId)
+        public void DoRequest(RequestData credentials, int userId)
         {
             // Gets the logger
             Logger log = this.GenerateLogger("GetStatusRequest");
@@ -33,17 +33,17 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 .Critical("UserId=" + userId);
 
             // Starting the request
-            this.DoRequest(log,host, port, rsa, new JObject()
+            this.DoRequest(credentials, log, new JObject()
             {
                 ["id"] = userId
-            }, x=>this.OnSuccess(log,x),(a,b)=>this.OnFailure(log,a,b));
+            }, this.OnSuccess,this.OnFailure);
         }
         
         /// <summary>
         /// Handler for a successfull request
         /// </summary>
         /// <exception cref="Exception">Any exception will be converted into an unknown error</exception>
-        private void OnSuccess(Logger log,JObject resp)
+        private void OnSuccess(JObject resp, Logger log)
         {
             // If the user is logged in
             bool loggedIn = (bool)resp["loggedin"];
@@ -71,7 +71,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// Error handler
         /// </summary>
         /// <exception cref="Exception">Any exception will be converted into an unknown error</exception>
-        private void OnFailure(Logger log,string err,JObject resp)
+        private void OnFailure(string err,JObject resp, Logger log)
         {
             log
                 .Debug("Failed to perform request: "+err)

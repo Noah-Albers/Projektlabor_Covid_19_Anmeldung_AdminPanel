@@ -119,6 +119,7 @@
     <Compile Include="config\ConfigInvalidKeyException.cs" />
     <Compile Include="connection\exceptions\HandshakeException.cs" />
     <Compile Include="connection\PLCASocket.cs" />
+    <Compile Include="connection\RequestData.cs" />
     <Compile Include="connection\requests\GetStatusRequest.cs" />
     <Compile Include="connection\requests\GrabUserRequest.cs" />
     <Compile Include="connection\requests\LoginRFIDRequest.cs" />

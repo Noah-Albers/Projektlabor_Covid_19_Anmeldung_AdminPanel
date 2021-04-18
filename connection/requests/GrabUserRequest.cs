@@ -15,7 +15,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// <summary>
         /// Starts the request
         /// </summary>
-        public void DoRequest(string host, int port, RSAParameters privateKey)
+        public void DoRequest(RequestData credentials)
         {
             // Gets the logger
             Logger log = this.GenerateLogger("GrabUserRequest");
@@ -24,12 +24,10 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 
             // Starts the request
             this.DoRequest(
+                credentials,
                 log,
-                host,
-                port,
-                privateKey,
                 new JObject(),
-                x=>this.OnReceive(x,log), (_, _2) => this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN)
+                this.OnReceive, (_, _2, _3) => this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN)
             );
         }
 

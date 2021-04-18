@@ -40,7 +40,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// Starts the request
         /// </summary>
         /// <param name="userId">The id of the user that shall be loged out</param>
-        public void DoRequest(string host, int port, RSAParameters rsa, UserEntity user)
+        public void DoRequest(RequestData credentials, UserEntity user)
         {
             // Generates the logger
             Logger log = this.GenerateLogger("RegisterUserRequest");
@@ -72,25 +72,30 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             }
 
             // Starts the request
-            this.DoRequest(log,host, port, rsa, request, resp=>
-            {
-                // Gets the id
-                int id = (int)resp["id"];
+            this.DoRequest(credentials, log, request, this.OnSuccessResponse, this.OnFailure);
+        }
 
-                log
-                    .Debug("Successfully registered a new user")
-                    .Critical("New userid: " + id);
+        /// <summary>
+        /// Executes if the response is success
+        /// </summary>
+        private void OnSuccessResponse(JObject resp, Logger log)
+        {
+            // Gets the id
+            int id = (int)resp["id"];
 
-                // Executes the success handler with the received id
-                this.OnSuccess?.Invoke(id);
-            }, (a,b)=>this.OnFailure(log,a,b));
+            log
+                .Debug("Successfully registered a new user")
+                .Critical("New userid: " + id);
+
+            // Executes the success handler with the received id
+            this.OnSuccess?.Invoke(id);
         }
 
         /// <summary>
         /// Error handler
         /// </summary>
         /// <exception cref="Exception">Any exception will be converted into an unknown error</exception>
-        private void OnFailure(Logger log,string err,JObject resp)
+        private void OnFailure(string err,JObject resp, Logger log)
         {
             log
                 .Debug("Failed to register user: "+err)

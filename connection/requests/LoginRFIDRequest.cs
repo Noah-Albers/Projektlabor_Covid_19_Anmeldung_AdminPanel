@@ -18,7 +18,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// Starts the request
         /// </summary>
         /// <param name="userId">The id of a user</param>
-        public void DoRequest(string host, int port, RSAParameters rsa, string rfid)
+        public void DoRequest(RequestData credentials, string rfid)
         {
             // Generates the logger
             Logger log = this.GenerateLogger("LoginRFIDRequest");
@@ -28,27 +28,32 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 .Critical("RFID=" + rfid);
 
             // Starts the request
-            this.DoRequest(log,host, port, rsa, new JObject()
+            this.DoRequest(credentials,log, new JObject()
             {
                 ["rfid"] = rfid
-            }, res =>
-            {
-                // Gets the status
-                bool status = (bool)res["status"]; 
+            },this.OnSuccessResponse, this.OnFailure);
+        }
 
-                log
-                    .Debug("Request was successfull")
-                    .Critical("User is not logged " + (status ? "in" : "out"));
+        /// <summary>
+        /// Successfull-response handler
+        /// </summary>
+        private void OnSuccessResponse(JObject resp,Logger log)
+        {
+            // Gets the status
+            bool status = (bool)resp["status"]; 
 
-                this.OnSuccess?.Invoke(status);
-            }, (a,b)=>this.OnFailure(log,a,b));
+            log
+                .Debug("Request was successfull")
+                .Critical("User is not logged " + (status ? "in" : "out"));
+
+            this.OnSuccess?.Invoke(status);
         }
 
         /// <summary>
         /// Error handler
         /// </summary>
         /// <exception cref="Exception">Any exception will be converted into an unknown error</exception>
-        private void OnFailure(Logger log,string err, JObject resp)
+        private void OnFailure(string err, JObject resp, Logger log)
         {
             log
                 .Debug("Failed to login user using rfid: "+err)
