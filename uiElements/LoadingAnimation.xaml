@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             x:Class="projektlabor.noah.planmeldung.uiElements.LoadingAnimation"
+             x:Class="projektlabor.covid19login.adminpanel.uiElements.LoadingAnimation"
              >
     <Viewbox>
         <Grid Width="500" Height="500" RenderTransformOrigin="0.5,0.5">

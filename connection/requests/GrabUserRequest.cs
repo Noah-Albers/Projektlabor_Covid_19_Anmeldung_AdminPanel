@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
-using projektlabor.noah.planmeldung.datahandling.entities;
+using projektlabor.covid19login.adminpanel.datahandling.entities;
 using System;
 using System.Security.Cryptography;
-using System.Xml;
 
-namespace Pl_Covid_19_Anmeldung.connection.requests
+namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     class GrabUserRequest : PLCARequest
     {

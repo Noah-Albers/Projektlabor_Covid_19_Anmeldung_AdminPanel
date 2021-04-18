@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows;
-using projektlabor.noah.planmeldung.Properties.langs;
+using projektlabor.covid19login.adminpanel.Properties.langs;
 using System;
 
-namespace projektlabor.noah.planmeldung.uiElements
+namespace projektlabor.covid19login.adminpanel.uiElements
 {
     /// <summary>
     /// Interaction logic for LoginInput.xaml

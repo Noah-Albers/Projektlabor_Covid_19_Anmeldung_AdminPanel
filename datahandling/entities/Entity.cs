@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
+using projektlabor.covid19login.adminpanel.datahandling.exceptions;
 using Newtonsoft.Json.Linq;
-using Pl_Covid_19_Anmeldung.datahandling.exceptions;
 
-namespace Pl_Covid_19_Anmeldung.datahandling.entities
+namespace projektlabor.covid19login.adminpanel.datahandling.entities
 {
     public abstract class Entity
     {

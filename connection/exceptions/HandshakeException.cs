@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pl_Covid_19_Anmeldung.connection.exceptions
+namespace projektlabor.covid19login.adminpanel.connection.exceptions
 {
     [Serializable]
     class HandshakeException : Exception

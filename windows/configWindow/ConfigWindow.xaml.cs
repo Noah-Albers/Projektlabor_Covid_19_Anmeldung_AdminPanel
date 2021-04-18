@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Pl_Covid_19_Anmeldung.security;
-using Pl_Covid_19_Anmeldung.windows.dialogs;
-using Pl_Covid_19_Anmeldung.windows.requests;
-using projektlabor.noah.planmeldung;
-using projektlabor.noah.planmeldung.Properties.langs;
+using projektlabor.covid19login.adminpanel.security;
+using projektlabor.covid19login.adminpanel.windows.dialogs;
+using projektlabor.covid19login.adminpanel.windows.requests;
+using projektlabor.covid19login.adminpanel;
+using projektlabor.covid19login.adminpanel.Properties.langs;
 using System;
 using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Pl_Covid_19_Anmeldung.windows.configWindow
+namespace projektlabor.covid19login.adminpanel.windows.configWindow
 {
     /// <summary>
     /// Interaction logic for ConfigWindow.xaml

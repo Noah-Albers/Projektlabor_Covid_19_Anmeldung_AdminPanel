@@ -1,5 +1,5 @@
-﻿using Pl_Covid_19_Anmeldung.connection.exceptions;
-using Pl_Covid_19_Anmeldung.security;
+﻿using projektlabor.covid19login.adminpanel.connection.exceptions;
+using projektlabor.covid19login.adminpanel.security;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
-namespace Pl_Covid_19_Anmeldung.connection
+namespace projektlabor.covid19login.adminpanel.connection
 {
     class PLCASocket : IDisposable
     {

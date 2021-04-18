@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pl_Covid_19_Anmeldung
+namespace projektlabor.covid19login.adminpanel
 {
     class Logger
     {

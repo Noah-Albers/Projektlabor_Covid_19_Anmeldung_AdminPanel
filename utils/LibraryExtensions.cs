@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Linq;
 using System.Windows;
 
-namespace projektlabor.noah.planmeldung.utils
+namespace projektlabor.covid19login.adminpanel.utils
 {
     public static class LibraryExtensions
     {

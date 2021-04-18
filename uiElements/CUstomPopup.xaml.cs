@@ -1,8 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 
-namespace projektlabor.noah.planmeldung.uiElements
+namespace projektlabor.covid19login.adminpanel.uiElements
 {
     /// <summary>
     /// Interaction logic for Popup.xaml

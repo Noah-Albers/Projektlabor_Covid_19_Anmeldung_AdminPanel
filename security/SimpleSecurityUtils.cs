@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Pl_Covid_19_Anmeldung.security
+namespace projektlabor.covid19login.adminpanel.security
 {
     static class SimpleSecurityUtils
     {

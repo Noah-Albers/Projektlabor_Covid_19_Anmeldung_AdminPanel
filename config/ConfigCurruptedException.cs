@@ -1,4 +1,4 @@
-﻿namespace Pl_Covid_19_Anmeldung.config
+﻿namespace projektlabor.covid19login.adminpanel.config
 {
     /// <summary>
     /// If the loaded config could be decrypted, but the config is currputed

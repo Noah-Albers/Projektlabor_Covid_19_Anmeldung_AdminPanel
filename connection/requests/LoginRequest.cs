@@ -2,7 +2,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Pl_Covid_19_Anmeldung.connection.requests
+namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     class LoginRequest : PLCARequest
     {

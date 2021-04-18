@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Pl_Covid_19_Anmeldung.windows.requests
+namespace projektlabor.covid19login.adminpanel.windows.requests
 {
     /// <summary>
     /// Interaction logic for YesNoWindow.xaml

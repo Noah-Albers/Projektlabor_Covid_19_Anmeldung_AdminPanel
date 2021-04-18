@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Pl_Covid_19_Anmeldung.utils
+namespace projektlabor.covid19login.adminpanel.utils
 {
     [AttributeUsage(AttributeTargets.Field,AllowMultiple = true)]
     class EnumProperty : Attribute

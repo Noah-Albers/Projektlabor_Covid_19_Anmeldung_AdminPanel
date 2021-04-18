@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json.Linq;
-using Pl_Covid_19_Anmeldung.connection.exceptions;
-using Pl_Covid_19_Anmeldung.utils;
-using projektlabor.noah.planmeldung.Properties.langs;
+using projektlabor.covid19login.adminpanel.connection.exceptions;
+using projektlabor.covid19login.adminpanel.utils;
 using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Pl_Covid_19_Anmeldung.connection.requests
+namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     abstract class PLCARequest
     {

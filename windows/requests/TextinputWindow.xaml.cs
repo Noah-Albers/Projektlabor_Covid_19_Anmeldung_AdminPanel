@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Pl_Covid_19_Anmeldung.windows.dialogs
+namespace projektlabor.covid19login.adminpanel.windows.dialogs
 {
     /// <summary>
     /// Interaction logic for TextinputWindow.xaml

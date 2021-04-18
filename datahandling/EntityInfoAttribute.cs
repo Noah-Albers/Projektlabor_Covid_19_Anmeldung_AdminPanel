@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pl_Covid_19_Anmeldung.datahandling
+namespace projektlabor.covid19login.adminpanel.datahandling
 {
     [AttributeUsage(AttributeTargets.Field,AllowMultiple = false)]
     class EntityInfoAttribute : Attribute

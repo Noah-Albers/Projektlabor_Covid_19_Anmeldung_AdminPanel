@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
-using Pl_Covid_19_Anmeldung;
-using Pl_Covid_19_Anmeldung.config;
-using Pl_Covid_19_Anmeldung.security;
-using Pl_Covid_19_Anmeldung.windows.dialogs;
-using Pl_Covid_19_Anmeldung.windows.requests;
-using projektlabor.noah.planmeldung.Properties.langs;
+using projektlabor.covid19login.adminpanel;
+using projektlabor.covid19login.adminpanel.config;
+using projektlabor.covid19login.adminpanel.security;
+using projektlabor.covid19login.adminpanel.windows.dialogs;
+using projektlabor.covid19login.adminpanel.windows.requests;
+using projektlabor.covid19login.adminpanel.Properties.langs;
 using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 
-namespace projektlabor.noah.planmeldung
+namespace projektlabor.covid19login.adminpanel
 {
     public class Config
     {

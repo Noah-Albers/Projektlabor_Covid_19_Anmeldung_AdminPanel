@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projektlabor.noah.planmeldung.Properties.langs {
+namespace projektlabor.covid19login.adminpanel.Properties.langs {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Lang {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Lang() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -39,13 +39,13 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Pl_Covid_19_Anmeldung.Properties.langs.Lang", typeof(Lang).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("projektlabor.covid19login.adminpanel.Properties.langs.Lang", typeof(Lang).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Neues Passwort.
         /// </summary>
@@ -68,7 +68,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.button.newpw", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rückgängig.
         /// </summary>
@@ -77,7 +77,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.button.reset", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Speichern.
         /// </summary>
@@ -86,7 +86,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.button.save", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Rohmaterial Kopieren.
         /// </summary>
@@ -95,7 +95,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.currepted.copy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ihr eingegebener Schlüssel ist richtig und die Datei konnte geladen werden.
         ///Leider das Dateiformat kapput und kann nicht geladen werden.
@@ -107,7 +107,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.currupted.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
@@ -116,7 +116,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.currupted.no", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Konfiguration is Fehlerhaft.
         /// </summary>
@@ -125,7 +125,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.currupted.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Neu erstellen.
         /// </summary>
@@ -134,7 +134,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.currupted.yes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to IP/Domain (Remote Server).
         /// </summary>
@@ -143,7 +143,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.host", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Schließen.
         /// </summary>
@@ -152,7 +152,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.loaderr.close", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehler beim laden.
         /// </summary>
@@ -161,7 +161,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.loaderr.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehler beim erstellen der Konfiguration.
         /// </summary>
@@ -170,7 +170,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.new.error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Schließen.
         /// </summary>
@@ -179,7 +179,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.new.error.button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bitte geben Sie ein neues Passwort an..
         /// </summary>
@@ -188,7 +188,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.new.pass.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Neues Passwort.
         /// </summary>
@@ -197,7 +197,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.new.pass.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
@@ -206,7 +206,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.newpw.no", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Neues Passwort eingeben.
         /// </summary>
@@ -215,7 +215,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.newpw.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Passwort ändern.
         /// </summary>
@@ -224,7 +224,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.newpw.yes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es wurde keine Konfigurationsdatei gefunden, möchten Sie eine neue erstellen?.
         /// </summary>
@@ -233,7 +233,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.notexisting.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nein.
         /// </summary>
@@ -242,7 +242,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.notexisting.no", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Konfigurationsdatei existiert nicht.
         /// </summary>
@@ -251,7 +251,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.notexisting.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ja.
         /// </summary>
@@ -260,7 +260,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.notexisting.yes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
@@ -269,7 +269,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.pass.cancle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bestätigen.
         /// </summary>
@@ -278,7 +278,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.pass.ok", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Passwort benötigt.
         /// </summary>
@@ -287,7 +287,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.pass.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Port-Nummer (Remote Server).
         /// </summary>
@@ -296,7 +296,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.port", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to RSA-Schlüssel.
         /// </summary>
@@ -305,7 +305,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.rsa", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
@@ -314,7 +314,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.save.button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehlerhafter Schlüssel (Private Key).
         /// </summary>
@@ -323,7 +323,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.save.key", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehlerhafter Port.
         /// </summary>
@@ -332,7 +332,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.save.port", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unbekannter Fehler.
         /// </summary>
@@ -341,7 +341,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.save.unknown", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Konfiguration.
         /// </summary>
@@ -350,7 +350,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Erneut versuchen.
         /// </summary>
@@ -359,7 +359,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.wrongpw.retry", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Falsches Passwort.
         /// </summary>
@@ -368,7 +368,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("config.wrongpw.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sichere das Profil....
         /// </summary>
@@ -377,7 +377,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Änderungen speichern.
         /// </summary>
@@ -386,7 +386,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.save", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der ausgewählte Nutzer konnte nicht gefunden werden? Bitte versuchen Sie erneut ihn auszuwählen..
         /// </summary>
@@ -395,7 +395,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.select.error.not_found.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer nicht gefunden.
         /// </summary>
@@ -404,7 +404,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.select.error.not_found.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lade Benutzer....
         /// </summary>
@@ -413,7 +413,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.select.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Profil editieren.
         /// </summary>
@@ -422,7 +422,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.edituser.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Einloggen.
         /// </summary>
@@ -431,7 +431,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.login.button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Passwort eingeben.
         /// </summary>
@@ -440,7 +440,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.login.field", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Willkommen im Admin-Panel.
         /// </summary>
@@ -449,7 +449,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.admin.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein unerwarteter Fehler aufgetreten. Bitte sagen Sie sofort einem Projektlaborianer bescheid..
         /// </summary>
@@ -458,7 +458,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.error.fatal.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Kritischer Fehler aufgetreten.
         /// </summary>
@@ -467,7 +467,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.error.fatal.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Abmelden.
         /// </summary>
@@ -476,7 +476,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.button.end", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anmelden.
         /// </summary>
@@ -485,7 +485,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.button.start", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
@@ -494,7 +494,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.error.button.ok", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Verlassen.
         /// </summary>
@@ -503,7 +503,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.field.end", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nachname.
         /// </summary>
@@ -512,7 +512,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.field.lastname", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Betreten.
         /// </summary>
@@ -521,7 +521,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.field.start", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vorname.
         /// </summary>
@@ -530,7 +530,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.fields.firstname", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
         ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
@@ -541,7 +541,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.get.error.not_found.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer nicht gefunden.
         /// </summary>
@@ -550,7 +550,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.get.error.not_found.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anmelden....
         /// </summary>
@@ -559,7 +559,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Abmelden....
         /// </summary>
@@ -568,7 +568,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.loading.logout", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sie sind anscheinend immer noch angemeldet.
         ///Bitte wählen Sie ihren Benutzer noch einmal aus um sicher zu gehen..
@@ -578,7 +578,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.login.error.loggedin.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer ist immer noch angemeldet.
         /// </summary>
@@ -587,7 +587,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.login.error.loggedin.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
         ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
@@ -598,7 +598,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.login.error.not_found.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer nicht gefunden.
         /// </summary>
@@ -607,7 +607,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.login.error.not_found.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sie sind anscheinend nicht mehr angemeldet.
         ///Bitte wählen Sie ihren Benutzer noch einmal aus um sicher zu gehen..
@@ -617,7 +617,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.logout.error.loggedout.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer ist bereits abgemeldet.
         /// </summary>
@@ -626,7 +626,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.logout.error.loggedout.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
         ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
@@ -637,7 +637,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.logout.error.not_found.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Benutzer nicht gefunden.
         /// </summary>
@@ -646,7 +646,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.logout.error.not_found.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Willkommen    (Erfolgreich angemeldet).
         /// </summary>
@@ -655,7 +655,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.rfid.success.title.login", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Tschüss    (Erfolgreich abgemeldet).
         /// </summary>
@@ -664,7 +664,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.rfid.success.title.logout", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Lade Benutzer....
         /// </summary>
@@ -673,7 +673,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.select.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Anmelden.
         /// </summary>
@@ -682,7 +682,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.login.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Schließen.
         /// </summary>
@@ -691,7 +691,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.popup.close", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Erneut versuchen.
         /// </summary>
@@ -700,7 +700,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.popup.retrie", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ich akzeptiere, dass meine Daten gespeichert werden..
         /// </summary>
@@ -709,7 +709,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.accept", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ihr Daten werden von uns über die Zeit der Covid-19 Pandemie gespeichert. Wenn Sie angeben, dass ihre Daten nach 6 Wochen gelöscht werden sollen, werden diese innerhalb von 4-6 Wochen von unserem System entfernt. Ihre Daten werden von uns nicht weitergegeben und sind nur von Administratoren einsehbar. Gespeichert werden ihre Daten auf unserem Server im Projektlabor und auf einem Goneo-server, welcher in Frankfurt steht..
         /// </summary>
@@ -718,7 +718,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.accept.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Registrieren.
         /// </summary>
@@ -727,7 +727,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Benutzername wird bereits verwendet.
         ///Bitte geben Sie ihren Namen an. Oder ändern Sie ihn etwas ab um Verwirrung zu vermeiden..
@@ -737,7 +737,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.error.name", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Dieser RFIC-Code wird bereits verwendet. Bitte verwenden Sie einen anderen Code oder eine andere Karte..
         /// </summary>
@@ -746,7 +746,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.error.rfid", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehler beim Registrieren.
         /// </summary>
@@ -755,7 +755,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.error.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Registriere....
         /// </summary>
@@ -764,7 +764,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sie haben sich erfolgreich registriert. Bitte melden sie sich jetzt noch an und wenn sie gehen wieder ab..
         /// </summary>
@@ -773,7 +773,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.success.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Erfolgreich registriert.
         /// </summary>
@@ -782,7 +782,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.success.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Registrieren.
         /// </summary>
@@ -791,7 +791,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.register.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist wärend der Verbindung zum Remoteserver ein Verifizierungsfehler aufgetreten. Bitte versuchen Sie es erneut. Sollte es weiterhin nicht funktionieren, geben Sie bitte einem Projektlaborianer bescheid..
         /// </summary>
@@ -800,7 +800,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.auth.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Verifizierungsfehler.
         /// </summary>
@@ -809,7 +809,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.auth.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
@@ -818,7 +818,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.button", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Die Serverseitige-schnittstelle konnte nicht gefunden werden. Bitte sagen Sie einem Projektlaborianer bescheid..
         /// </summary>
@@ -827,7 +827,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.handler.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Handler nicht bekannt.
         /// </summary>
@@ -836,7 +836,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.handler.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Die Verbindung zum Remoteserver konnte nicht hergestellt werden oder wurde verloren. Bitte versuchen Sie es erneut. Sollte es weiterhin nicht funktionieren, geben Sie bitte einem Projektlaborianer bescheid..
         /// </summary>
@@ -845,7 +845,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.io.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Verbindung verloren.
         /// </summary>
@@ -854,7 +854,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.io.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein Schlüsselfehler aufgetreten..
         /// </summary>
@@ -863,7 +863,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.authkey.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Server hat einen Auth-fehler zurückgegeben..
         /// </summary>
@@ -872,7 +872,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.authserver.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Auf dem Server ist ein Fehler mit der Datenbank aufgetreten..
         /// </summary>
@@ -881,7 +881,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.database.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Server hat einen Handler-fehler zurückgegeben..
         /// </summary>
@@ -890,7 +890,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.handler.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Der Server zu wenig oder falsche Daten gesendet um die Anfrage zu verarbeiten..
         /// </summary>
@@ -899,7 +899,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.lessreturn.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein technischer Fehler aufgetreten, bitte geben Sie einem Projektlaborianer bescheid.
         ///Beschreibung:
@@ -910,7 +910,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Technischer Fehler.
         /// </summary>
@@ -919,7 +919,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein unbekannter Fehler aufgetreten. Bitte logs anschauen und ggf. kritisches Loggen benutzen..
         /// </summary>
@@ -928,7 +928,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.technical.unknown.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es ist eine unbekannter Fehler aufgetreten. Bitte geben Sie einem Projektlaborianer bescheid..
         /// </summary>
@@ -937,7 +937,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.unknown.info", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unbekannter Fehler.
         /// </summary>
@@ -946,7 +946,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.request.error.unknown.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es konnte kein Benutzer mit dieser RFID gefunden werden. Bitte versichern Sie sich, dass Sie die richtige Karte gescannt haben und versuchen Sie erneut die Karte zu scannen. Sollt diese Meldung weiterhin angezeigt werden, fragen Sie einen Projektlaborianer ob er ihrem Profil die RFID-Karte zuweist..
         /// </summary>
@@ -955,7 +955,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.rfid.error.loading.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nutzer konnte nicht gefunden werden.
         /// </summary>
@@ -964,7 +964,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.rfid.error.loading.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Es konnte kein angeschlossener RFID-Scanner gefunden werden. Bitte versichern Sie sich, dass dieser angeschlossen ist. Es kann helfen den Scanner einmal raus und wieder ein zu stecken..
         /// </summary>
@@ -973,7 +973,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.rfid.error.port_not_found.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to RFID-Scanner wurde nicht gefunden..
         /// </summary>
@@ -982,7 +982,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.rfid.error.port_not_found.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Suche Nutzer....
         /// </summary>
@@ -991,7 +991,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("main.rfid.loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Mein Account soll nach 6 Wochen gelöscht werden..
         /// </summary>
@@ -1000,7 +1000,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.autodeleteaccount", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wir versichern, dass ihr Konto nach 4 und allerspätestens 6 Wochen gelöscht wird. Wenn Sie innerhalb dieser Zeitspanne im Projektlabor waren, wird diese Zeit zurückgesetzt..
         /// </summary>
@@ -1009,7 +1009,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.autodeleteaccount.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Scannen.
         /// </summary>
@@ -1018,7 +1018,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.button.scan", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Email (Optional).
         /// </summary>
@@ -1027,7 +1027,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.email", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to *.
         /// </summary>
@@ -1036,7 +1036,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.error.street_number", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vorname.
         /// </summary>
@@ -1045,7 +1045,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.firstname", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nachname.
         /// </summary>
@@ -1054,7 +1054,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.lastname", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Wohnort.
         /// </summary>
@@ -1063,7 +1063,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.location", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bitte geben Sie eine valide Email-Adresse an..
         /// </summary>
@@ -1072,7 +1072,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.opterror.email", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to PLZ.
         /// </summary>
@@ -1081,7 +1081,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.plz", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to RFID-Code (Optional).
         /// </summary>
@@ -1090,7 +1090,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.rfid", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Halten Sie ihre RFID-Karte oder ihr Handy mit der RFID-App an den Scanner und lassen Sie ihre Karte scannen..
         /// </summary>
@@ -1099,7 +1099,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.rfid.text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Bitte scannen sie ihre RFID-Karte.
         /// </summary>
@@ -1108,7 +1108,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.rfid.title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Straße.
         /// </summary>
@@ -1117,7 +1117,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.street", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nr..
         /// </summary>
@@ -1126,7 +1126,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.street_number", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Telefon (Optional).
         /// </summary>
@@ -1135,7 +1135,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.register.telephone", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Erforderlich.
         /// </summary>
@@ -1144,7 +1144,7 @@ namespace projektlabor.noah.planmeldung.Properties.langs {
                 return ResourceManager.GetString("ui.registerinput.opterror.default", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fehlerhaft.
         /// </summary>

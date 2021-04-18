@@ -1,8 +1,8 @@
-﻿using Pl_Covid_19_Anmeldung;
+﻿using projektlabor.covid19login.adminpanel;
 using System;
 using System.IO.Ports;
 
-namespace projektlabor.noah.planmeldung.utils
+namespace projektlabor.covid19login.adminpanel.utils
 {
     class RFIDReader
     {

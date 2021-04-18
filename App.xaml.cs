@@ -1,8 +1,8 @@
-﻿using Pl_Covid_19_Anmeldung;
+﻿using projektlabor.covid19login.adminpanel;
 using System;
 using System.Windows;
 
-namespace projektlabor.noah.planmeldung
+namespace projektlabor.covid19login.adminpanel
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{67B23B63-F9B8-4184-895A-C62882D24207}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Pl_Covid_19_Anmeldung</RootNamespace>
+    <RootNamespace>projektlabor.covid19login.adminpanel</RootNamespace>
     <AssemblyName>Pl-Covid-19-Anmeldung</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -140,17 +140,14 @@
     </Compile>
     <Compile Include="security\SimpleSecurityUtils.cs" />
     <Compile Include="utils\EnumPropertyAttribute.cs" />
+    <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\requests\AcknowledgmentWindow.xaml.cs">
       <DependentUpon>AcknowledgmentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\configWindow\ConfigWindow.xaml.cs">
       <DependentUpon>ConfigWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="windows\mainWindow\uielements\RegisterForm.xaml.cs">
-      <DependentUpon>RegisterForm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="windows\mainWindow\uielements\UserSearch.xaml.cs">
-      <DependentUpon>UserSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\requests\TextinputWindow.xaml.cs">
       <DependentUpon>TextinputWindow.xaml</DependentUpon>
@@ -166,6 +163,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="windows\mainWindow\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\requests\AcknowledgmentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,17 +175,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\mainWindow\uielements\RegisterForm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="uiElements\CustomInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="windows\mainWindow\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -194,8 +187,6 @@
     <Compile Include="datahandling\entities\TimespentEntity.cs" />
     <Compile Include="datahandling\entities\SimpleUserEntity.cs" />
     <Compile Include="utils\LibraryExtensions.cs" />
-    <Compile Include="windows\mainWindow\MainWindowLogin.cs" />
-    <Compile Include="windows\mainWindow\MainWindowRegister.cs" />
     <Compile Include="utils\RFIDReader.cs" />
     <Compile Include="uiElements\CustomPopup.xaml.cs">
       <DependentUpon>CustomPopup.xaml</DependentUpon>
@@ -206,14 +197,6 @@
     <Compile Include="uiElements\CustomInput.xaml.cs">
       <DependentUpon>CustomInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="windows\mainWindow\uielements\UserSearch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="windows\requests\TextinputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

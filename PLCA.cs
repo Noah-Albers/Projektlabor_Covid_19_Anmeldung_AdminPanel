@@ -1,6 +1,6 @@
-﻿using projektlabor.noah.planmeldung;
+﻿using projektlabor.covid19login.adminpanel;
 
-namespace Pl_Covid_19_Anmeldung
+namespace projektlabor.covid19login.adminpanel
 {
     class PLCA
     {

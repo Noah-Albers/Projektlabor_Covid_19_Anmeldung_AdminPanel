@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace projektlabor.noah.planmeldung.uiElements
+namespace projektlabor.covid19login.adminpanel.uiElements
 {
     /// <summary>
     /// Interaction logic for LoadingAnimation.xaml

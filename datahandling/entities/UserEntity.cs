@@ -1,10 +1,10 @@
-﻿using Pl_Covid_19_Anmeldung.datahandling;
+﻿using projektlabor.covid19login.adminpanel.datahandling;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace projektlabor.noah.planmeldung.datahandling.entities
+namespace projektlabor.covid19login.adminpanel.datahandling.entities
 {
     public class UserEntity : SimpleUserEntity
     {
