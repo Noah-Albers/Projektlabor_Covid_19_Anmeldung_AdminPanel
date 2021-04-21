@@ -44,14 +44,8 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         [EntityInfo(REGISTER_DATE)]
         public DateTime RegisterDate;
 
-        protected override Dictionary<string, FieldInfo> Entrys()
-        {
-            return ENTRYS;
-        }
+        protected override Dictionary<string, FieldInfo> Entrys() => ENTRYS;
 
-        public override string ToString()
-        {
-            return $"{base.ToString()} Loc= {this.Street} {this.StreetNumber} {this.Location} {this.PLZ} Telephone={this.TelephoneNumber} Email={this.Email} RFID={this.Rfid} Autodelete={this.AutoDeleteAccount} Registered={this.RegisterDate}";
-        }
+        public override string ToString() => $"{base.ToString()} Loc= {this.Street} {this.StreetNumber} {this.Location} {this.PLZ} Telephone={this.TelephoneNumber} Email={this.Email} RFID={this.Rfid} Autodelete={this.AutoDeleteAccount} Registered={this.RegisterDate}";
     }
 }

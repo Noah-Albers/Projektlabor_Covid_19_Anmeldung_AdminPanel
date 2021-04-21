@@ -8,14 +8,14 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
     class GrabUserRequest : PLCARequest
     {
         // Executer when the request has success
-        public Action<SimpleUserEntity[]> onReceive;
+        public Action<SimpleUserEntity[]> OnReceive;
 
         protected override int GetEndpointId() => 0;
 
         /// <summary>
         /// Starts the request
         /// </summary>
-        public void DoRequest(RequestData credentials)
+        public void DoRequest(RequestData credentials,long authCode)
         {
             // Gets the logger
             Logger log = this.GenerateLogger("GrabUserRequest");
@@ -25,13 +25,14 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             // Starts the request
             this.DoRequest(
                 credentials,
+                authCode,
                 log,
                 new JObject(),
-                this.OnReceive, (_, _2, _3) => this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN)
+                this.OnReceiveRequest, (_, _2, _3) => this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN)
             );
         }
 
-        private void OnReceive(JObject resp,Logger log)
+        private void OnReceiveRequest(JObject resp,Logger log)
         {
 
             // Gets the raw users as an jarray
@@ -60,7 +61,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 }
 
             // Sends all received users
-            this.onReceive?.Invoke(users);
+            this.OnReceive?.Invoke(users);
         }
     }
 }

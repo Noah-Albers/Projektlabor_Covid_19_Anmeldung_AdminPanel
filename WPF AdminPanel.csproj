@@ -120,13 +120,10 @@
     <Compile Include="connection\exceptions\HandshakeException.cs" />
     <Compile Include="connection\PLCASocket.cs" />
     <Compile Include="connection\RequestData.cs" />
-    <Compile Include="connection\requests\GetStatusRequest.cs" />
+    <Compile Include="connection\requests\AdminAuthcodeRequest.cs" />
     <Compile Include="connection\requests\GrabUserRequest.cs" />
-    <Compile Include="connection\requests\LoginRFIDRequest.cs" />
-    <Compile Include="connection\requests\LoginRequest.cs" />
-    <Compile Include="connection\requests\LogoutRequest.cs" />
     <Compile Include="connection\requests\PLCARequest.cs" />
-    <Compile Include="connection\requests\RegisterUserRequest.cs" />
+    <Compile Include="connection\requests\SimplePLCARequest.cs" />
     <Compile Include="datahandling\entities\Entity.cs" />
     <Compile Include="datahandling\entities\UserEntity.cs" />
     <Compile Include="datahandling\EntityInfoAttribute.cs" />
@@ -224,7 +221,7 @@
     <EmbeddedResource Include="Properties\langs\Lang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>projektlabor.noah.planmeldung.Properties.langs</CustomToolNamespace>
+      <CustomToolNamespace>projektlabor.covid19login.adminpanel.Properties.langs</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

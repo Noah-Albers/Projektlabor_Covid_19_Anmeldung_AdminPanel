@@ -393,9 +393,6 @@ Bitte geben Sie ihren Namen an. Oder ändern Sie ihn etwas ab um Verwirrung zu v
   <data name="main.request.error.technical.authkey.text" xml:space="preserve">
     <value>Es ist ein Schlüsselfehler aufgetreten.</value>
   </data>
-  <data name="main.request.error.technical.authserver.text" xml:space="preserve">
-    <value>Der Server hat einen Auth-fehler zurückgegeben.</value>
-  </data>
   <data name="main.request.error.technical.database.text" xml:space="preserve">
     <value>Auf dem Server ist ein Fehler mit der Datenbank aufgetreten.</value>
   </data>

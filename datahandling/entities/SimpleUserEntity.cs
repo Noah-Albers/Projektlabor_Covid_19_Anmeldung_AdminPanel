@@ -36,19 +36,10 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         /// </summary>
         /// <param name="search"></param>
         /// <returns>True if the user matches; else false</returns>
-        public bool IsMatching(string search)
-        {
-            // Checks if the firstname or lastname matches
-            return this.ToString().ToLower().Contains(search.ToLower());
-        }
-        public override string ToString()
-        {
-            return $"{this.Firstname} {this.Lastname}";
-        }
+        public bool IsMatching(string search) => this.ToString().ToLower().Contains(search.ToLower());
 
-        protected override Dictionary<string, FieldInfo> Entrys()
-        {
-            return ENTRYS;
-        }
+        public override string ToString() => $"{this.Firstname} {this.Lastname}";
+
+        protected override Dictionary<string, FieldInfo> Entrys() => ENTRYS;
     }
 }

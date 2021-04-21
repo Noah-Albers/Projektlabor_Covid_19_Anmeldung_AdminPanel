@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projektlabor.covid19login.adminpanel.covid19login.adminpanel.Properties {
+namespace projektlabor.covid19login.adminpanel.Properties {
     using System;
     
     

@@ -42,9 +42,6 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         [EntityInfo(USER_ID)]
         public int? UserId;
 
-        protected override Dictionary<string, FieldInfo> Entrys()
-        {
-            return ENTRYS;
-        }
+        protected override Dictionary<string, FieldInfo> Entrys() => ENTRYS;
     }
 }
