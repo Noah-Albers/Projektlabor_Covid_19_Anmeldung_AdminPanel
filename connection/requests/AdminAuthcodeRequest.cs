@@ -11,6 +11,8 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         public Action OnSuccess;
         // Executer when the database returned an error
         public Action OnDatabaseError;
+        // Executer when the server failed to deliver the email (Problem is eighter with the server-email or the client-email)
+        public Action OnEmailError;
 
         protected override int GetEndpointId() => 8;
 
@@ -39,12 +41,19 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         /// </summary>
         private void OnError(string err,JObject data,Logger log)
         {
-            // Checks if the error is an database-error
-            if (err.Equals("database"))
-                this.OnDatabaseError?.Invoke();
-            else
-                // Unknown error
-                this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+            switch (err)
+            {
+                case "database":
+                    this.OnDatabaseError?.Invoke();
+                    break;
+                case "email":
+                    this.OnEmailError?.Invoke();
+                    break;
+                default:
+                    // Unknown error
+                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                    break;
+            }
         }
     }
 }
