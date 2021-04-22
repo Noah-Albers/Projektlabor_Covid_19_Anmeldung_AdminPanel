@@ -83,16 +83,20 @@ namespace projektlabor.covid19login.adminpanel
 
             r.DoRequest(cred,authCode,u);*/
 
-            var r = new AdminFrezeSelfRequest()
+            var r = new AdminGetProfileRequest()
             {
-                OnDatabaseError = () => write("Database error"),
                 OnErrorIO = () => write("I/O Error"),
                 OnNonsenseError = x => write("Common error: " + x),
                 OnAccountFrozenError = () => write("Account is frozen"),
                 OnAuthExpiredError = () => write("Auth code is expired"),
                 OnAuthInvalidError = () => write("Auth code is invalid"),
                 OnNoPermissionError = () => write("No permissions to request endpoint"),
-                OnSuccess = () => write("Success"),
+                OnSuccess = x =>
+                {
+                    write("Success");
+
+                    Console.WriteLine();
+                },
             };
 
             r.DoRequest(cred, authCode);
