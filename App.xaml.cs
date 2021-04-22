@@ -2,6 +2,7 @@
 using projektlabor.covid19login.adminpanel;
 using projektlabor.covid19login.adminpanel.connection;
 using projektlabor.covid19login.adminpanel.connection.requests;
+using projektlabor.covid19login.adminpanel.datahandling.entities;
 using projektlabor.covid19login.adminpanel.security;
 using System;
 using System.Security.Cryptography;
@@ -50,24 +51,40 @@ namespace projektlabor.covid19login.adminpanel
 
             var cred = new RequestData("localhost", 12345, 1, key);
 
-            long authCode = 1234;
+            long authCode = 6326506555566115719;
 
             void write(string g) => Console.WriteLine($"\n======================================\n{g}\n======================================\n");
 
-            var r = new AdminAuthcodeRequest()
+            var r = new AdminEditUserRequest
             {
                 OnDatabaseError = () => write("Database error"),
                 OnErrorIO = () => write("I/O Error"),
                 OnNonsenseError = x => write("Common error: " + x),
+                OnAccountFrozenError = () => write("Account is frozen"),
+                OnAuthExpiredError = ()=> write("Auth code is expired"),
+                OnAuthInvalidError = ()=>write("Auth code is invalid"),
                 OnNoPermissionError = () => write("No permissions to request endpoint"),
-                OnSuccess = () => write("Successfully send authcode to email"),
+                OnSuccess = () => write("Success"),
             };
 
+            UserEntity u = new UserEntity()
+            {
+                Id = 1,
+                AutoDeleteAccount = true,
+                Firstname = "Json",
+                Lastname = "Banane",
+                Location = "Yeetloc",
+                PLZ = 12345,
+                RegisterDate = DateTime.Now,
+                Street = "Some straße",
+                StreetNumber = "7g",
+                Rfid="ABCDERFID"
+            };
 
-            r.DoRequest(cred);
+            r.DoRequest(cred,authCode,u);
 
 
-            Console.ReadLine();
+            Current.Shutdown(0);
         }
     }
 }

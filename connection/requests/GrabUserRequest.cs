@@ -51,7 +51,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 {
                     // Tries to load the user
                     users[i] = new SimpleUserEntity();
-                    users[i].Load((JObject)rawUserArr[i], SimpleUserEntity.ENTRYS_LIST);
+                    users[i].Load((JObject)rawUserArr[i], SimpleUserEntity.ATTRIBUTE_LIST);
                 }
                 catch
                 {

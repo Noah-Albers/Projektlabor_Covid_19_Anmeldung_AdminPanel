@@ -16,11 +16,12 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         DISCONNECTED_ON_END = "enddisconnect",
         USER_ID = "userid";
 
-        // Holds all entrys
-        private static readonly Dictionary<string, FieldInfo> ENTRYS = GetEntrys(typeof(TimespentEntity));
-
-        // Holds a list with all names for the entrys
-        public static readonly string[] ENTRYS_LIST = ENTRYS.Select(i => i.Key).ToArray();
+        // Copy-Paste generated. Just change the class name
+        // Automatically grabs and stores all attributes from the class to easily serialize and deserialize those
+        private static readonly Dictionary<string, FieldInfo> ATTRIBUTES = GetAttributes(typeof(TimespentEntity));
+        public static readonly string[] ATTRIBUTE_LIST = GetAttributeNames(typeof(TimespentEntity));
+        public static readonly string[] OPTIONAL_ATTRIBUTE_LIST = GetAttributeNames(typeof(TimespentEntity), true);
+        public static readonly string[] REQUIRED_ATTRIBUTE_LIST = GetAttributeNames(typeof(TimespentEntity), false);
 
         /// The unique id of the timespent entity
         [EntityInfo(ID)]
@@ -31,7 +32,7 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         public DateTime? Start;
 
         /// When the user ended his work
-        [EntityInfo(STOP)]
+        [EntityInfo(STOP,true)]
         public DateTime? Stop;
 
         /// If the day-end stopped the work
@@ -42,6 +43,6 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         [EntityInfo(USER_ID)]
         public int? UserId;
 
-        protected override Dictionary<string, FieldInfo> Entrys() => ENTRYS;
+        protected override Dictionary<string, FieldInfo> Attributes() => ATTRIBUTES;
     }
 }

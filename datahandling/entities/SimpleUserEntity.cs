@@ -13,11 +13,10 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
 	    FIRSTNAME = "firstname",
 	    LASTNAME = "lastname";
 
-        // Holds all entrys
-        private static readonly Dictionary<string,FieldInfo> ENTRYS = GetEntrys(typeof(SimpleUserEntity));
-
-        // Holds a list with all names for the entrys
-        public static readonly string[] ENTRYS_LIST = ENTRYS.Select(i => i.Key).ToArray();
+        // Copy-Paste generated. Just change the class name
+        // Automatically grabs and stores all attributes from the class to easily serialize and deserialize those
+        private static readonly Dictionary<string, FieldInfo> ATTRIBUTES = GetAttributes(typeof(SimpleUserEntity));
+        public static readonly string[] ATTRIBUTE_LIST = GetAttributeNames(typeof(SimpleUserEntity));
 
         /// The users unique id
         [EntityInfo(ID)]
@@ -40,6 +39,6 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
 
         public override string ToString() => $"{this.Firstname} {this.Lastname}";
 
-        protected override Dictionary<string, FieldInfo> Entrys() => ENTRYS;
+        protected override Dictionary<string, FieldInfo> Attributes() => ATTRIBUTES;
     }
 }

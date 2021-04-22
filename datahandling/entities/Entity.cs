@@ -10,11 +10,11 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
     public abstract class Entity
     {
         /// <summary>
-        /// Gets all entry's from a class. As they can't change at runtime, they should be stored statically. But as they are for every class that inherits different, they can best be grabbed like this so load-time can be reduced.
+        /// Gets all attributes's from a class. As they can't change at runtime, they should be stored statically. But as they are for every class that inherits different, they can best be grabbed like this so load-time can be reduced.
         /// Use them like this: 1. Create a static Dictionary<string,FieldInfo> for your class and
         /// directly assign them to <see cref="getEntrys"/> with Yourclass
         /// </summary>
-        protected abstract Dictionary<string, FieldInfo> Entrys();
+        protected abstract Dictionary<string, FieldInfo> Attributes();
 
         /// <summary>
         /// Tries to load the values of this object (that have been marked properly) from the given json supplier.
@@ -91,7 +91,7 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         private void ExecuteActionForRequiredAndOptional(Func<FieldInfo, string, bool, Exception> supplier, string[] required, params string[] optional)
         {
             // Gets the entrys
-            var entrys = this.Entrys();
+            var entrys = this.Attributes();
 
             // Iterates over all values
             for(int i=0;i<required.Length + optional.Length; i++)
@@ -120,7 +120,7 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
         /// </summary>
         /// <param name="cls">The base class to parse from</param>
         /// <returns>A dictionary with all entrys</returns>
-        protected static Dictionary<string, FieldInfo> GetEntrys(Type cls)
+        protected static Dictionary<string, FieldInfo> GetAttributes(Type cls)
         {
             // 1. Selects all fields from the given class with their first EntityInfo attribute
             // 2. Removes all invalid fields (Multiple or zero EntityInfo-attributes)
@@ -144,10 +144,37 @@ namespace projektlabor.covid19login.adminpanel.datahandling.entities
             // Checks if there are inheritable entrys that must be searched for
             if (!cls.BaseType.Equals(typeof(Entity)))
                 // Appends the other entrys from the base class
-                entrys.Concat(GetEntrys(cls.BaseType));
+                entrys.Concat(GetAttributes(cls.BaseType));
 
             return entrys;
         }
 
+        /// <summary>
+        /// Returns all attribute names
+        /// </summary>
+        protected static string[] GetAttributeNames(Type cls) =>
+            // Gets the attributes
+            GetAttributes(cls)
+            // Converts to the name array
+            .Select(i => i.Key).ToArray();
+
+        /// <summary>
+        /// Returns all attribute-names the are eighter optional or required (select by the optional param)
+        /// </summary>
+        /// <param name="cls">The type to select from</param>
+        /// <param name="optional">if the optional or required ones should be selected</param>
+        protected static string[] GetAttributeNames(Type cls,bool optional)
+        {
+            // Selects all optional or required attributes from a class
+            return
+                // Gets all attributes
+                GetAttributes(cls)
+                // Filters the eighter optional (if that is searched) or the required attributes
+                .Where(i => optional == (i.Value.GetCustomAttribute(typeof(EntityInfoAttribute)) as EntityInfoAttribute).Optional)
+                // Maps to their names
+                .Select(i=>i.Key)
+                // returns as an array
+                .ToArray();
+        }
     }
 }
