@@ -83,7 +83,7 @@ namespace projektlabor.covid19login.adminpanel
 
             r.DoRequest(cred,authCode,u);*/
 
-            var r = new AdminGetProfileRequest()
+            var r = new AdminGrabUserRequest()
             {
                 OnErrorIO = () => write("I/O Error"),
                 OnNonsenseError = x => write("Common error: " + x),
@@ -91,6 +91,8 @@ namespace projektlabor.covid19login.adminpanel
                 OnAuthExpiredError = () => write("Auth code is expired"),
                 OnAuthInvalidError = () => write("Auth code is invalid"),
                 OnNoPermissionError = () => write("No permissions to request endpoint"),
+                OnDatabaseError = () => write("Database error"),
+                OnNotFoundError = () => write("User not found"),
                 OnSuccess = x =>
                 {
                     write("Success");
@@ -99,7 +101,7 @@ namespace projektlabor.covid19login.adminpanel
                 },
             };
 
-            r.DoRequest(cred, authCode);
+            r.DoRequest(cred, authCode,1);
 
             Current.Shutdown(0);
         }

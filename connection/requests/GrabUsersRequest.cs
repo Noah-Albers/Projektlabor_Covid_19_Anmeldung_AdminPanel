@@ -5,10 +5,12 @@ using System.Security.Cryptography;
 
 namespace projektlabor.covid19login.adminpanel.connection.requests
 {
-    class GrabUserRequest : PLCARequest
+    class GrabUsersRequest : PLCARequest
     {
         // Executer when the request has success
         public Action<SimpleUserEntity[]> OnReceive;
+        // Executor if the request received an database error
+        public Action OnDatabaseError;
 
         protected override int GetEndpointId() => 0;
 
@@ -28,7 +30,14 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 authCode,
                 log,
                 new JObject(),
-                this.OnReceiveRequest, (_, _2, _3) => this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN)
+                this.OnReceiveRequest, (err, _2, _3) =>
+                {
+                    // Checks if the error is a database error
+                    if (err.Equals("database"))
+                        this.OnDatabaseError?.Invoke();
+                    else
+                        this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                }
             );
         }
 

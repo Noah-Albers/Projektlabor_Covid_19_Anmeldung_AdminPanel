@@ -124,7 +124,8 @@
     <Compile Include="connection\requests\AdminEditUserRequest.cs" />
     <Compile Include="connection\requests\AdminFrezeSelfRequest.cs" />
     <Compile Include="connection\requests\AdminGetProfileRequest.cs" />
-    <Compile Include="connection\requests\GrabUserRequest.cs" />
+    <Compile Include="connection\requests\AdminGrabUserRequest.cs" />
+    <Compile Include="connection\requests\GrabUsersRequest.cs" />
     <Compile Include="connection\requests\PLCARequest.cs" />
     <Compile Include="connection\requests\SimplePLCARequest.cs" />
     <Compile Include="datahandling\entities\Entity.cs" />
