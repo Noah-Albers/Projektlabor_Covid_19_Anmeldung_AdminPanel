@@ -55,7 +55,7 @@ namespace projektlabor.covid19login.adminpanel
 
             void write(string g) => Console.WriteLine($"\n======================================\n{g}\n======================================\n");
 
-            var r = new AdminEditUserRequest
+            /*var r = new AdminEditUserRequest
             {
                 OnDatabaseError = () => write("Database error"),
                 OnErrorIO = () => write("I/O Error"),
@@ -81,8 +81,21 @@ namespace projektlabor.covid19login.adminpanel
                 Rfid="ABCDERFID"
             };
 
-            r.DoRequest(cred,authCode,u);
+            r.DoRequest(cred,authCode,u);*/
 
+            var r = new AdminFrezeSelfRequest()
+            {
+                OnDatabaseError = () => write("Database error"),
+                OnErrorIO = () => write("I/O Error"),
+                OnNonsenseError = x => write("Common error: " + x),
+                OnAccountFrozenError = () => write("Account is frozen"),
+                OnAuthExpiredError = () => write("Auth code is expired"),
+                OnAuthInvalidError = () => write("Auth code is invalid"),
+                OnNoPermissionError = () => write("No permissions to request endpoint"),
+                OnSuccess = () => write("Success"),
+            };
+
+            r.DoRequest(cred, authCode);
 
             Current.Shutdown(0);
         }

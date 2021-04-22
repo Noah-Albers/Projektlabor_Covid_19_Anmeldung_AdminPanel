@@ -122,6 +122,7 @@
     <Compile Include="connection\RequestData.cs" />
     <Compile Include="connection\requests\AdminAuthcodeRequest.cs" />
     <Compile Include="connection\requests\AdminEditUserRequest.cs" />
+    <Compile Include="connection\requests\AdminFrezeSelfRequest.cs" />
     <Compile Include="connection\requests\GrabUserRequest.cs" />
     <Compile Include="connection\requests\PLCARequest.cs" />
     <Compile Include="connection\requests\SimplePLCARequest.cs" />
