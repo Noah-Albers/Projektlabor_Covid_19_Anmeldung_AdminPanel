@@ -9,8 +9,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
     {
         // Executer when the request has success
         public Action<SimpleUserEntity[]> OnReceive;
-        // Executor if the request received an database error
-        public Action OnDatabaseError;
 
         protected override int GetEndpointId() => 0;
 
@@ -34,7 +32,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 {
                     // Checks if the error is a database error
                     if (err.Equals("database"))
-                        this.OnDatabaseError?.Invoke();
+                        this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
                     else
                         this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
                 }

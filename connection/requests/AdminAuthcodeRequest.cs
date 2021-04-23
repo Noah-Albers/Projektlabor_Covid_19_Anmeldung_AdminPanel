@@ -9,8 +9,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
     {
         // Executer when the request has success
         public Action OnSuccess;
-        // Executer when the database returned an error
-        public Action OnDatabaseError;
         // Executer when the server failed to deliver the email (Problem is eighter with the server-email or the client-email)
         public Action OnEmailError;
 
@@ -44,7 +42,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             switch (err)
             {
                 case "database":
-                    this.OnDatabaseError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
                     break;
                 case "email":
                     this.OnEmailError?.Invoke();

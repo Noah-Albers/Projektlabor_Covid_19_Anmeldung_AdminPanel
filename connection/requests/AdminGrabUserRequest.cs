@@ -15,8 +15,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 
         // Executer if the user does not exist
         public Action OnNotFoundError;
-        // Executer if the request received an database error
-        public Action OnDatabaseError;
 
         protected override int GetEndpointId() => 12;
 
@@ -53,7 +51,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                     this.OnNotFoundError?.Invoke();
                     break;
                 case "database":
-                    this.OnDatabaseError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
                     break;
                 default:
                     this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);

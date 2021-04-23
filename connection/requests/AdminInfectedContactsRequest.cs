@@ -28,8 +28,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 
         // Executer once the request finishes successfully
         public Action<KeyValuePair<UserEntity, ContactInfoEntity[]>[]> OnSuccess;
-        // Executer if the request failes with an database error
-        public Action OnDatabaseError;
         // Executer if the user could not be found
         public Action OnNotFoundError;
 
@@ -99,7 +97,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             switch (errorCode)
             {
                 case "database":
-                    this.OnDatabaseError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
                     break;
                 case "not_found":
                     this.OnNotFoundError?.Invoke();
