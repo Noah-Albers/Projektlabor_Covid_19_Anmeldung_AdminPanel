@@ -5,6 +5,7 @@ using projektlabor.covid19login.adminpanel.connection.requests;
 using projektlabor.covid19login.adminpanel.datahandling.entities;
 using projektlabor.covid19login.adminpanel.security;
 using System;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Windows;
 
@@ -83,7 +84,7 @@ namespace projektlabor.covid19login.adminpanel
 
             r.DoRequest(cred,authCode,u);*/
 
-            var r = new AdminGrabUserRequest()
+            var r = new AdminInfectedContactsRequest()
             {
                 OnErrorIO = () => write("I/O Error"),
                 OnNonsenseError = x => write("Common error: " + x),
@@ -101,7 +102,7 @@ namespace projektlabor.covid19login.adminpanel
                 },
             };
 
-            r.DoRequest(cred, authCode,1);
+            r.DoRequest(cred, authCode,new DateTime(2021,4,1),1,15);
 
             Current.Shutdown(0);
         }
