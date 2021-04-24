@@ -32,9 +32,9 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 {
                     // Checks if the error is a database error
                     if (err.Equals("database"))
-                        this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
+                        this.OnCommonError?.Invoke(CommonError.SERVER_DATABASE);
                     else
-                        this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                        throw new Exception();
                 }
             );
         }
@@ -60,11 +60,10 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                     users[i] = new SimpleUserEntity();
                     users[i].Load((JObject)rawUserArr[i], SimpleUserEntity.ATTRIBUTE_LIST);
                 }
-                catch
+                catch(Exception e)
                 {
-                    // If any user failes to load, the request is invalid
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
-                    return;
+                    log.Debug("Failed to load user").Critical(e);
+                    throw;
                 }
 
             // Sends all received users

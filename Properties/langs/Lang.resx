@@ -243,44 +243,47 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="main.title" xml:space="preserve">
     <value>Projektlabor | Covid 19 Anmeldung | Administrator-Interface</value>
   </data>
-  <data name="request.error.nons.authexpired" xml:space="preserve">
+  <data name="request.error.common.authexpired" xml:space="preserve">
     <value>Der angegebene Authcode ist abgelaufen.</value>
   </data>
-  <data name="request.error.nons.authinvalid" xml:space="preserve">
+  <data name="request.error.common.authinvalid" xml:space="preserve">
     <value>Der angegebene Authcode ist falsch.</value>
   </data>
-  <data name="request.error.nons.frozen" xml:space="preserve">
-    <value>Ihr Account ist gesperrt (Eingefroren) und kann nicht genutzt werden.</value>
-  </data>
-  <data name="requests.error.email.text" xml:space="preserve">
-    <value>Server konnte die Email mit dem Auth-code nicht absenden.</value>
-  </data>
-  <data name="requests.error.email.title" xml:space="preserve">
-    <value>Email-Fehler</value>
-  </data>
-  <data name="requests.error.io.text" xml:space="preserve">
-    <value>Die Verbindung mit dem Server konnte nicht hergestellt werden.</value>
-  </data>
-  <data name="requests.error.io.title" xml:space="preserve">
-    <value>Verbindung fehlgeschlagen</value>
-  </data>
-  <data name="requests.error.nons.authkey" xml:space="preserve">
-    <value>Ihr Authentifizierungs-Schlüssel scheint mit dem des Servers nicht über ein zu stimmen.</value>
-  </data>
-  <data name="requests.error.nons.database" xml:space="preserve">
+  <data name="request.error.common.database" xml:space="preserve">
     <value>Es ist ein Fehler bei der Datenbankverbindung auf dem Server aufgetreteten.</value>
   </data>
-  <data name="requests.error.nons.handler" xml:space="preserve">
+  <data name="request.error.common.frozen" xml:space="preserve">
+    <value>Ihr Account ist gesperrt (Eingefroren) und kann nicht genutzt werden.</value>
+  </data>
+  <data name="request.error.common.io" xml:space="preserve">
+    <value>Die Verbindung mit dem Server konnte nicht hergestellt werden. I/O-Error</value>
+  </data>
+  <data name="request.error.common.title" xml:space="preserve">
+    <value>Fehler bei der Anfrage</value>
+  </data>
+  <data name="request.error.email.text" xml:space="preserve">
+    <value>Server konnte die Email mit dem Auth-code nicht absenden.</value>
+  </data>
+  <data name="request.error.email.title" xml:space="preserve">
+    <value>Email-Fehler</value>
+  </data>
+  <data name="request.error.tech.authkey" xml:space="preserve">
+    <value>Ihr Authentifizierungs-Schlüssel scheint mit dem des Servers nicht über ein zu stimmen.</value>
+  </data>
+  <data name="request.error.tech.handler" xml:space="preserve">
     <value>Der Server hat einen Handler-Fehler zurückgegeben.</value>
   </data>
-  <data name="requests.error.nons.permission" xml:space="preserve">
+  <data name="request.error.tech.permission" xml:space="preserve">
     <value>Ihr Account hat keine Rechte diese Aktion anzufragen.</value>
   </data>
-  <data name="requests.error.nons.title" xml:space="preserve">
+  <data name="request.error.tech.title" xml:space="preserve">
     <value>Technischer Fehler</value>
   </data>
-  <data name="requests.error.nons.unknown" xml:space="preserve">
+  <data name="request.error.tech.unknown" xml:space="preserve">
     <value>Es ist ein unbekannter Fehler aufgetreten.</value>
+  </data>
+  <data name="requests.error.tech.help" xml:space="preserve">
+    <value> Bitte fragen Sie einen Techniker um hilfe bei diesem Problem.</value>
   </data>
   <data name="startup.getauth.invalid" xml:space="preserve">
     <value>Der angegebene Text entspricht nicht dem Authcode-Format.</value>

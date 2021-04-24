@@ -435,117 +435,126 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         /// <summary>
         ///   Looks up a localized string similar to Der angegebene Authcode ist abgelaufen..
         /// </summary>
-        public static string request_error_nons_authexpired {
+        public static string request_error_common_authexpired {
             get {
-                return ResourceManager.GetString("request.error.nons.authexpired", resourceCulture);
+                return ResourceManager.GetString("request.error.common.authexpired", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Der angegebene Authcode ist falsch..
         /// </summary>
-        public static string request_error_nons_authinvalid {
+        public static string request_error_common_authinvalid {
             get {
-                return ResourceManager.GetString("request.error.nons.authinvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ihr Account ist gesperrt (Eingefroren) und kann nicht genutzt werden..
-        /// </summary>
-        public static string request_error_nons_frozen {
-            get {
-                return ResourceManager.GetString("request.error.nons.frozen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Server konnte die Email mit dem Auth-code nicht absenden..
-        /// </summary>
-        public static string requests_error_email_text {
-            get {
-                return ResourceManager.GetString("requests.error.email.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email-Fehler.
-        /// </summary>
-        public static string requests_error_email_title {
-            get {
-                return ResourceManager.GetString("requests.error.email.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Verbindung mit dem Server konnte nicht hergestellt werden..
-        /// </summary>
-        public static string requests_error_io_text {
-            get {
-                return ResourceManager.GetString("requests.error.io.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verbindung fehlgeschlagen.
-        /// </summary>
-        public static string requests_error_io_title {
-            get {
-                return ResourceManager.GetString("requests.error.io.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ihr Authentifizierungs-Schlüssel scheint mit dem des Servers nicht über ein zu stimmen..
-        /// </summary>
-        public static string requests_error_nons_authkey {
-            get {
-                return ResourceManager.GetString("requests.error.nons.authkey", resourceCulture);
+                return ResourceManager.GetString("request.error.common.authinvalid", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein Fehler bei der Datenbankverbindung auf dem Server aufgetreteten..
         /// </summary>
-        public static string requests_error_nons_database {
+        public static string request_error_common_database {
             get {
-                return ResourceManager.GetString("requests.error.nons.database", resourceCulture);
+                return ResourceManager.GetString("request.error.common.database", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ihr Account ist gesperrt (Eingefroren) und kann nicht genutzt werden..
+        /// </summary>
+        public static string request_error_common_frozen {
+            get {
+                return ResourceManager.GetString("request.error.common.frozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Verbindung mit dem Server konnte nicht hergestellt werden. I/O-Error.
+        /// </summary>
+        public static string request_error_common_io {
+            get {
+                return ResourceManager.GetString("request.error.common.io", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler bei der Anfrage.
+        /// </summary>
+        public static string request_error_common_title {
+            get {
+                return ResourceManager.GetString("request.error.common.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server konnte die Email mit dem Auth-code nicht absenden..
+        /// </summary>
+        public static string request_error_email_text {
+            get {
+                return ResourceManager.GetString("request.error.email.text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email-Fehler.
+        /// </summary>
+        public static string request_error_email_title {
+            get {
+                return ResourceManager.GetString("request.error.email.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ihr Authentifizierungs-Schlüssel scheint mit dem des Servers nicht über ein zu stimmen..
+        /// </summary>
+        public static string request_error_tech_authkey {
+            get {
+                return ResourceManager.GetString("request.error.tech.authkey", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Der Server hat einen Handler-Fehler zurückgegeben..
         /// </summary>
-        public static string requests_error_nons_handler {
+        public static string request_error_tech_handler {
             get {
-                return ResourceManager.GetString("requests.error.nons.handler", resourceCulture);
+                return ResourceManager.GetString("request.error.tech.handler", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ihr Account hat keine Rechte diese Aktion anzufragen..
         /// </summary>
-        public static string requests_error_nons_permission {
+        public static string request_error_tech_permission {
             get {
-                return ResourceManager.GetString("requests.error.nons.permission", resourceCulture);
+                return ResourceManager.GetString("request.error.tech.permission", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Technischer Fehler.
         /// </summary>
-        public static string requests_error_nons_title {
+        public static string request_error_tech_title {
             get {
-                return ResourceManager.GetString("requests.error.nons.title", resourceCulture);
+                return ResourceManager.GetString("request.error.tech.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Es ist ein unbekannter Fehler aufgetreten..
         /// </summary>
-        public static string requests_error_nons_unknown {
+        public static string request_error_tech_unknown {
             get {
-                return ResourceManager.GetString("requests.error.nons.unknown", resourceCulture);
+                return ResourceManager.GetString("request.error.tech.unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Bitte fragen Sie einen Techniker um hilfe bei diesem Problem..
+        /// </summary>
+        public static string requests_error_tech_help {
+            get {
+                return ResourceManager.GetString("requests.error.tech.help", resourceCulture);
             }
         }
         

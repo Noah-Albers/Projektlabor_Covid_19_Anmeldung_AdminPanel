@@ -16,6 +16,18 @@ namespace projektlabor.covid19login.adminpanel.windows.startup
     /// </summary>
     public partial class StartupWindow : Window
     {
+        // Config file that will be loaded
+        private Config cfg;
+
+        // Credentials that will be loaded
+        private RequestData credentials;
+
+        // Auth-code of the session that will be loaded
+        private long authCode;
+
+        // The user-profile that will be loaded
+        private SimpleAdminEntity profile;
+
         public StartupWindow() => InitializeComponent();
 
         /// <summary>
@@ -23,10 +35,10 @@ namespace projektlabor.covid19login.adminpanel.windows.startup
         /// </summary>
         private void OnWindowLoaded(object sender, RoutedEventArgs e) =>
         // Gets all important data from the user and performs the login with the backend
-        this.GetRequiredData((prof, cfg, cred, auth) =>
+        this.StartLoginProcess(() =>
         {
             // Opens the main-window
-            var win = new MainWindow(prof, cfg, cred, auth);
+            var win = new MainWindow(this.profile, this.cfg, this.credentials, this.authCode);
 
             // Starts the window
             win.Show();
@@ -36,9 +48,38 @@ namespace projektlabor.covid19login.adminpanel.windows.startup
         });
 
         /// <summary>
+        /// Displays the given error to the user and asks if he wants to retry
+        /// </summary>
+        private void DisplayConnectionError(string title,string text,Action retry)
+        {
+            // Creates the window for the error
+            var win = new YesNoWindow(title, retry, this.Close, Lang.main_startup_getauth_retry, Lang.global_button_cancel, title, text);
+
+            // Displays the window
+            win.ShowDialog();
+        }
+
+        /// <summary>
+        /// Displays a technical error to the user can shuts-down the program
+        /// </summary>
+        private void DisplayTechnicalErrorAndClose(TechnicalError err)
+        {
+            // Creates the window with the acknowledgment
+            var win = new AcknowledgmentWindow(
+                Lang.request_error_tech_title,
+                err.GetTextInCurrentLanguage() + Lang.requests_error_tech_help,
+                this.Close,
+                Lang.global_button_ok
+            );
+
+            // Displays the window
+            win.ShowDialog();
+        }
+
+        /// <summary>
         /// Requests all required values from the user and performs the login with the backend-server
         /// </summary>
-        private void GetRequiredData(Action<SimpleAdminEntity /*profile*/, Config /*config*/, RequestData /*credentials*/, long /*authCode*/> OnSuccess)
+        private void StartLoginProcess(Action OnSuccess)
         {
             // Loads the config
             Config.GetConfigFromUser((isNew, cfg, pw) =>
@@ -48,69 +89,88 @@ namespace projektlabor.covid19login.adminpanel.windows.startup
                     // Opens a new config-edit window
                     new ConfigWindow(cfg, pw).ShowDialog();
 
+                // Updates the config
+                this.cfg = cfg;
+
                 // Executes the config-loaded event
-                OnConfigLoaded(cfg);
+                this.OnceConfigLoaded(OnSuccess);
             }, this.Close);
+        }
 
-            // Executes if the connection failed
-            void OnConnectionError(string title, string text, Action callback) =>
-            // Displays the error and asks the user to retry the connection
-            new YesNoWindow(title, callback, this.Close, Lang.main_startup_getauth_retry, Lang.global_button_cancel, title, text).ShowDialog();
+        /// <summary>
+        /// Executes once the config got loaded successfully and editing has been done
+        /// </summary>
+        /// <param name="cfg">The loaded config</param>
+        private void OnceConfigLoaded(Action onSuccess)
+        {
+            // Generates the credentials
+            this.credentials = new RequestData(cfg.Host, cfg.Port, cfg.UserId, cfg.PrivateKey);
 
+            // Action to resend the authcode request
+            void resendAuthRequest() => OnceConfigLoaded(onSuccess);
 
-            // Executes once the config got loaded successfully and editing has been done
-            void OnConfigLoaded(Config cfg)
+            // Creates the request
+            var authRequest = new AdminAuthcodeRequest()
             {
-                // Generates the credentials
-                RequestData creds = new RequestData(cfg.Host, cfg.Port, cfg.UserId, cfg.PrivateKey);
+                OnEmailError = () =>
+                    this.DisplayConnectionError(
+                        Lang.request_error_email_title,
+                        Lang.request_error_email_text, 
+                        resendAuthRequest
+                    ),
+                OnCommonError = err =>
+                    this.DisplayConnectionError(
+                        Lang.request_error_common_title,
+                        err.GetTextInCurrentLanguage(),
+                        resendAuthRequest
+                    ),
+                OnTechnicalError = this.DisplayTechnicalErrorAndClose,
+                OnSuccess = () => this.OnceAuthcodeSend(onSuccess)
+            };
 
-                // Action to resend the authcode request
-                Action resendAuthRequest = () => OnConfigLoaded(cfg);
+            // Starts the request
+            authRequest.DoRequest(this.credentials);
+        }
 
-                // Creates the request
-                var authRequest = new AdminAuthcodeRequest()
+        /// <summary>
+        /// Executes once the auth-code got send via email
+        /// </summary>
+        /// <param name="cfg">The config file </param>
+        /// <param name="credentials"></param>
+        private void OnceAuthcodeSend(Action onSuccess)
+        {
+
+            // Waits for the user to input the auth-code
+            new TextinputWindow(Lang.main_startup_askauth_title, Lang.main_startup_askauth_title, authCodeText =>
+            {
+                // Checks and gets the authcode for/as a long
+                if (!long.TryParse(authCodeText, out this.authCode))
                 {
-                    OnEmailError = () => OnConnectionError(Lang.requests_error_nons_title, Lang.requests_error_email_text, resendAuthRequest),
-                    OnErrorIO = () => OnConnectionError(Lang.requests_error_io_title, Lang.requests_error_io_text, resendAuthRequest),
-                    OnNonsenseError = x => OnConnectionError(Lang.requests_error_nons_title, Lang.ResourceManager.GetString($"requests.error.nons.{x.GetLanguageKey()}"), resendAuthRequest),
-                    OnSuccess = () => OnRequestedAuthcode(cfg, creds)
+                    // Displays the error
+                    MessageBox.Show(Lang.startup_getauth_invalid);
+                    // Reasks the user
+                    OnceAuthcodeSend(onSuccess);
+                    return;
+                }
+
+                // Prepares the request
+                var req = new AdminGetProfileRequest()
+                {
+                    OnCommonError = err => DisplayConnectionError(Lang.request_error_common_title, err.GetTextInCurrentLanguage(), () => OnceAuthcodeSend(onSuccess)),
+                    OnTechnicalError = this.DisplayTechnicalErrorAndClose,
+                    OnSuccess = prof =>
+                    {
+                        // Updates the profile
+                        this.profile = prof;
+                        // Executes the callback
+                        onSuccess();
+                    }
                 };
 
                 // Starts the request
-                authRequest.DoRequest(creds);
-            }
+                req.DoRequest(this.credentials, this.authCode);
 
-            // Executes once the auth-code got requested successfully
-            void OnRequestedAuthcode(Config cfg, RequestData credentials)
-            {
-
-                // Waits for the user to input the auth-code
-                new TextinputWindow(Lang.main_startup_askauth_title, Lang.main_startup_askauth_title, authCodeText =>
-                {
-                    // Checks and gets the authcode for/as a long
-                    if (!long.TryParse(authCodeText, out long authCode))
-                    {
-                        // Displays the error
-                        MessageBox.Show(Lang.startup_getauth_invalid);
-                        // Reasks the user
-                        OnRequestedAuthcode(cfg, credentials);
-                        return;
-                    }
-
-                    // Prepares the request
-                    var req = new AdminGetProfileRequest()
-                    {
-                        OnErrorIO = () => OnConnectionError(Lang.requests_error_io_title, Lang.requests_error_io_text, () => OnRequestedAuthcode(cfg, credentials)),
-                        OnNonsenseError = err => OnConnectionError(Lang.requests_error_nons_title, Lang.ResourceManager.GetString($"requests.error.nons.{err.GetLanguageKey()}"), () => OnRequestedAuthcode(cfg, credentials)),
-                        OnSuccess = prof => OnSuccess(prof, cfg, credentials, authCode)
-                    };
-
-                    // Starts the request
-                    req.DoRequest(credentials, authCode);
-
-                }, this.Close, Lang.global_button_ok, Lang.global_button_cancel).ShowDialog();
-            }
-
+            }, this.Close, Lang.global_button_ok, Lang.global_button_cancel).ShowDialog();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using projektlabor.covid19login.adminpanel.connection.exceptions;
+using projektlabor.covid19login.adminpanel.Properties.langs;
 using projektlabor.covid19login.adminpanel.utils;
 using System;
 using System.IO;
@@ -13,10 +14,10 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         // Random generator
         private readonly static Random RDM_GENERATOR = new Random();
 
-        // Executer when an io error occurres
-        public Action OnErrorIO;
         // Executer when the server returns a known handler but one that does not make sense. Eg. a permission error where to applicatation can by default only request resources where the permission is given
-        public Action<NonsensicalError> OnNonsenseError;
+        public Action<CommonError> OnCommonError;
+        // Executer when the server returns a known error that usualy requires someone with server-access to fix
+        public Action<TechnicalError> OnTechnicalError;
 
         /// <summary>
         /// Generates a logger with a random id that can be 
@@ -47,13 +48,13 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             switch (exc)
             {
                 case "auth":
-                    this.OnNonsenseError?.Invoke(NonsensicalError.NO_ENDPOINT_PERMISSIONS);
+                    this.OnTechnicalError?.Invoke(TechnicalError.NO_ENDPOINT_PERMISSIONS);
                     break;
                 case "handler":
-                    this.OnNonsenseError?.Invoke(NonsensicalError.HANDLER);
+                    this.OnTechnicalError?.Invoke(TechnicalError.HANDLER);
                     break;
                 default:
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                    this.OnTechnicalError?.Invoke(TechnicalError.UNKNOWN);
                     break;
             }
         }
@@ -115,21 +116,21 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                             );
                             return;
                         default:
-                            this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                            this.OnTechnicalError?.Invoke(TechnicalError.UNKNOWN);
                             return;
                     }
                 }
             }
             catch (HandshakeException)
             {
-                this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_KEY);
+                this.OnTechnicalError?.Invoke(TechnicalError.AUTH_KEY);
             }
             catch (Exception e)
             {
                 // Checks if the error is an io-error
                 if (e is IOException || e is SocketException)
                     // Handle the io-error
-                    this.OnErrorIO?.Invoke();
+                    this.OnCommonError?.Invoke(CommonError.IO_ERROR);
                 else
                 {
                     log
@@ -137,25 +138,32 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                         .Critical(e.Message);
 
                     // Unknown error
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                    this.OnTechnicalError?.Invoke(TechnicalError.UNKNOWN);
                 }
             }
         }
     }
 
     /// <EnumProperty>lang - the name of the enum value that can be used to grab a certaint information from the Language file.</EnumProperty>
-    public enum NonsensicalError
+    public enum TechnicalError
     {
-        [EnumProperty("lang", "database")]    // The server database has an error (or could not be reached)
-        SERVER_DATABASE,
         [EnumProperty("lang", "handler")]     // The requested endpoint does not exist
         HANDLER,
-        [EnumProperty("lang", "authkey")]     // The rsa-key seems to not match up
+        [EnumProperty("lang", "permission")]  // The user doesn't have permissions to access the requested endpoint
+        NO_ENDPOINT_PERMISSIONS,
+        [EnumProperty("lang", "authkey")]     // The rsa-key's seems to not match up
         AUTH_KEY,
         [EnumProperty("lang", "unknown")]     // Unknown error
-        UNKNOWN,
-        [EnumProperty("lang", "permission")]  // The user doesn't have permissions to access the requested endpoint
-        NO_ENDPOINT_PERMISSIONS  ,
+        UNKNOWN
+    }
+
+    /// <EnumProperty>lang - the name of the enum value that can be used to grab a certaint information from the Language file.</EnumProperty>
+    public enum CommonError
+    {   
+        [EnumProperty("lang","io")]           // The connection failed
+        IO_ERROR,
+        [EnumProperty("lang", "database")]    // The server database has an error (or could not be reached)
+        SERVER_DATABASE,
         [EnumProperty("lang", "frozen")]      // The account of the requesting-user is frozen
         ACCOUNT_FROZEN,
         [EnumProperty("lang", "authexpired")] // The given authcode is expired
@@ -164,13 +172,18 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         AUTH_INVALID
     }
 
-    public static class NonsensicalErrorExtension
+    public static class ErrorExtension
     {
         /// <summary>
-        /// Gets the key value of the language key from the nonsensical error
+        /// Gets the description-string of the error from the currently selected language file
         /// </summary>
         /// <param name="err">The error</param>
-        /// <returns>the language key</returns>
-        public static string GetLanguageKey(this NonsensicalError err) => (string)err.GetAttribute<EnumProperty>(x => x.Key.Equals("lang")).Value;
+        public static string GetTextInCurrentLanguage(this TechnicalError err) => Lang.ResourceManager.GetString($"request.error.tech.{(string)err.GetAttribute<EnumProperty>(x => x.Key.Equals("lang")).Value}");
+
+        /// <summary>
+        /// Gets the description-string of the error from the currently selected language file
+        /// </summary>
+        /// <param name="err">The error</param>
+        public static string GetTextInCurrentLanguage(this CommonError err) => Lang.ResourceManager.GetString($"request.error.common.{(string)err.GetAttribute<EnumProperty>(x => x.Key.Equals("lang")).Value}");
     }
 }

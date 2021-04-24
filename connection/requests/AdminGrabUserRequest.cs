@@ -51,11 +51,10 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                     this.OnNotFoundError?.Invoke();
                     break;
                 case "database":
-                    this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
+                    this.OnCommonError?.Invoke(CommonError.SERVER_DATABASE);
                     break;
                 default:
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
-                    break;
+                    throw new Exception();
             }
         }
     }

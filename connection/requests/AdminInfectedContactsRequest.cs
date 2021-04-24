@@ -8,6 +8,12 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     class AdminInfectedContactsRequest : PLCARequest
     {
+        // Executer once the request finishes successfully
+        public Action<KeyValuePair<UserEntity, ContactInfoEntity[]>[]> OnSuccess;
+        // Executer if the user could not be found
+        public Action OnNotFoundError;
+
+
         // Values of the users that will be received
         private static readonly string[] RECEIVE_USER_REQUIRED =
         {
@@ -25,11 +31,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             UserEntity.TELEPHONE,
             UserEntity.EMAIL
         };
-
-        // Executer once the request finishes successfully
-        public Action<KeyValuePair<UserEntity, ContactInfoEntity[]>[]> OnSuccess;
-        // Executer if the user could not be found
-        public Action OnNotFoundError;
 
         protected override int GetEndpointId() => 13;
 
@@ -97,14 +98,13 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             switch (errorCode)
             {
                 case "database":
-                    this.OnNonsenseError?.Invoke(NonsensicalError.SERVER_DATABASE);
+                    this.OnCommonError?.Invoke(CommonError.SERVER_DATABASE);
                     break;
                 case "not_found":
                     this.OnNotFoundError?.Invoke();
                     break;
                 default:
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
-                    break;
+                    throw new Exception();
             }
         }
     }

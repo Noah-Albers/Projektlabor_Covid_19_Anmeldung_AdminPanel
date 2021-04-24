@@ -26,15 +26,15 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             {
                 case "auth.invalid":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_INVALID);
+                    this.OnCommonError?.Invoke(CommonError.AUTH_INVALID);
                     break;
                 case "auth.expired":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_EXPIRED);
+                    this.OnCommonError?.Invoke(CommonError.AUTH_EXPIRED);
                     break;
                 case "auth.frozen":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnNonsenseError?.Invoke(NonsensicalError.ACCOUNT_FROZEN);
+                    this.OnCommonError?.Invoke(CommonError.ACCOUNT_FROZEN);
                     break;
                 default:
                     base.HandlePreprocessingError(exc, log);
@@ -55,7 +55,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         {
             try
             {
-
                 // Starts the connection
                 using (PLCASocket socket = new PLCASocket(log,credentials))
                 {
@@ -103,21 +102,21 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                             );
                             return;
                         default:
-                            this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                            this.OnTechnicalError?.Invoke(TechnicalError.UNKNOWN);
                             return;
                     }
                 }
             }
             catch (HandshakeException)
             {
-                this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_KEY);
+                this.OnTechnicalError?.Invoke(TechnicalError.AUTH_KEY);
             }
             catch (Exception e)
             {
                 // Checks if the error is an io-error
                 if (e is IOException || e is SocketException)
                     // Handle the io-error
-                    this.OnErrorIO?.Invoke();
+                    this.OnCommonError?.Invoke(CommonError.IO_ERROR);
                 else
                 {
                     log
@@ -125,7 +124,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                         .Critical(e.Message);
 
                     // Unknown error
-                    this.OnNonsenseError?.Invoke(NonsensicalError.UNKNOWN);
+                    this.OnTechnicalError?.Invoke(TechnicalError.UNKNOWN);
                 }
             }
         }
