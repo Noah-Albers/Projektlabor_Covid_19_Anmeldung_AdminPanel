@@ -3,9 +3,10 @@ using projektlabor.covid19login.adminpanel.connection.requests;
 using projektlabor.covid19login.adminpanel.datahandling.entities;
 using projektlabor.covid19login.adminpanel.Properties.langs;
 using projektlabor.covid19login.adminpanel.windows.configWindow;
-using projektlabor.covid19login.adminpanel.windows.dialogs;
-using projektlabor.covid19login.adminpanel.windows.requests;
+using projektlabor.covid19login.adminpanel.windows.mainWindow;
+using projektlabor.covid19login.adminpanel.windows.utils;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace projektlabor.covid19login.adminpanel
@@ -15,6 +16,21 @@ namespace projektlabor.covid19login.adminpanel
     /// </summary>
     public partial class App : Application
     {
+        // Config file that will be loaded
+        private Config cfg;
+
+        // Credentials that will be loaded
+        private RequestData credentials;
+
+        // Auth-code of the session that will be loaded
+        private long authCode;
+
+        // The user-profile that will be loaded
+        private SimpleAdminEntity profile;
+
+        // Background loading window
+        private LoadingWindow backgroundLoadingWindow;
+
         public App()
         {
             // Starts the logger
@@ -32,82 +48,179 @@ namespace projektlabor.covid19login.adminpanel
                 MessageBox.Show("Failed to start logger: " + e.Message);
                 // Kills the app
                 Current.Shutdown(-1);
+                return;
             }
 
-
-
-            /*var obj = JObject.Parse(@"
-                 {
-                     'modulus': 'z+1THEUom0elr2ECzc7zOgd59IIjzsRtsPKfnbu4wy82fSqwQde0+xToT+aa/LxmOy+OwC9LBqr78oJJotAotBIeYK2FubWNmhHfqWfG8c3ku7btdEcknTHiaOqlVGbwoE2/VIKZi1fZTVhXPY1fq77rwOLx86adcU8L8QrGxq7nZeNm1ruw2vRfFFV/LBQoqHMWGUxYwZo3HL2yOY3KaYcjqWVSHN2wfevf6pzuD95hvyv/Z7YnVDNsvWZn3y+fL5K0FUNUPksZIvhg5PTxFSqQsjcrOuBIUP616AxdOBTJphTCfDKX/OIg4QgkeMSlGRFsgbuBdCIyvTLDggREbQ==',
-                     'exponent': 'AQAB',
-                     'p': '0SqKiN14ZhvbGcajIruUkXdFSS2bS35KNk8WoXt4hKysbjjwpSCn+HAAEskn6huAR/KAfM3zKHF+KQNrpLta+sLUqum6eXLq/ppq5TIgyfqeEdN5tYpyugLS3nBKH3qssnbBBV52U9W51I5MwaUlxZ0y3G+Nav1TaTgWcecJPzc=',
-                     'q': '/nvBpQhR7GW3G7blnx6NROeu4uJWfL4PpvbzHzVMySR/CSzFkVthuxwWcMqNRoOse8ZyKU/hE1d7XyGt4tvUE5r+oHfG4XTk9uR/b24aIv+47/VRc+wrSUCR/FhVnuLZ5kd2Iv/z9ed+zBqSf8Hf9iec12bzPzROEnA0pPP0w3s=',
-                     'dp': 'ghKVcgVf4QfDmeToACpseoWURayh3TGdDubh6Ovyh3cmB6lLJTUIn7tuoEANnU0a2iMY+gPNCcKCNRkWcKu+KSDNxbdxqiLntgrrHLqun0xFzkoXbui47anh3kgwICFWkei9ogwbQ4kuddtEKkv8EEbwoRqR9A2zOEST2KNXIcM=',
-                     'dq': 'QCLmkfY/12lnNafpxSmJBxWxAON0Uqn//d99NJ9VQ9hb3+8Vt+WlAug4S6Lw6hWjcep4uSq1mg9RO4+caHFoyKwmgkDNseKpFgROjcHc+ncin+9e4O1jl2mboVKN+aZIrn3SK04AqTf3v+7ufx5YmIwxPiRnJ8XB62m2CuClDmM=',
-                     'inverseq': 'Mc0ndxKRQlf5lispsAFV06vbJYhrj6cSV6zWc7LWL4kPwAYUD29dZ+whrM7SG4AyLKLagZAC4UYOGC8rNKHBAVIU6iD1WCAQOCYbMYkWaMJzD06ztfPjqCveqZVbFfTMlhPz1jPiJXNU3j35dVf+eN8VrFM79SpVy0UpOoXb3fs=',
-                     'd': 'kRU29bXoBJl0qbAWRccOfkIzPYIFPERhiaNx7pzK6h6qdaHwxLCfzsai5wWwxYMsDkY75CvbvPZXwLpaaSm4DRXLbogFlDRzbrrkBo+sCJMy9CxK+eSeTrU9FxoLbJ47bo9xXqWWP913efmXPhLEW9FnLPrt+qYam7KdUX7EfmLO/FenWrAAtnvBK0EHJQPhmPjektJHn0LsrNx4P4otLh5hUAUCUTE6AQBwYw9mZxj4e71OaTgjo80sjXyuzm7engxiIXPK6CYaE2Hd+6KUNKfDw2oivW/EQR5HAGFJYpTu2QsOe5OFzfQWzJjzADHnG2yUT55KD1RC62pQVWcPPQ=='
-                  }
-            ");
-
-            var key = SimpleSecurityUtils.LoadRSAFromJson(obj);
-
-            var cred = new RequestData("localhost", 12345, 1, key);
-
-            long authCode = 6326506555566115719;
-
-            void write(string g) => Console.WriteLine($"\n======================================\n{g}\n======================================\n");
-
-            /*var r = new AdminEditUserRequest
-            {
-                OnDatabaseError = () => write("Database error"),
-                OnErrorIO = () => write("I/O Error"),
-                OnNonsenseError = x => write("Common error: " + x),
-                OnAccountFrozenError = () => write("Account is frozen"),
-                OnAuthExpiredError = ()=> write("Auth code is expired"),
-                OnAuthInvalidError = ()=>write("Auth code is invalid"),
-                OnNoPermissionError = () => write("No permissions to request endpoint"),
-                OnSuccess = () => write("Success"),
-            };
-
-            UserEntity u = new UserEntity()
-            {
-                Id = 1,
-                AutoDeleteAccount = true,
-                Firstname = "Json",
-                Lastname = "Banane",
-                Location = "Yeetloc",
-                PLZ = 12345,
-                RegisterDate = DateTime.Now,
-                Street = "Some straße",
-                StreetNumber = "7g",
-                Rfid="ABCDERFID"
-            };
-
-            r.DoRequest(cred,authCode,u);*/
-
-            /*var r = new AdminInfectedContactsRequest()
-            {
-                OnErrorIO = () => write("I/O Error"),
-                OnNonsenseError = x => write("Common error: " + x),
-                OnAccountFrozenError = () => write("Account is frozen"),
-                OnAuthExpiredError = () => write("Auth code is expired"),
-                OnAuthInvalidError = () => write("Auth code is invalid"),
-                OnNoPermissionError = () => write("No permissions to request endpoint"),
-                OnDatabaseError = () => write("Database error"),
-                OnNotFoundError = () => write("User not found"),
-                OnSuccess = x =>
-                {
-                    write("Success");
-
-                    Console.WriteLine();
-                },
-            };
-
-            r.DoRequest(cred, authCode,new DateTime(2021,4,1),1,15);
-
-            Current.Shutdown(0);*/
+            // Starts the login-process
+            this.StartLoginProcess();
         }
 
-        
+        /// <summary>
+        /// Executes once the whole login process has finished and all values have been received
+        /// </summary>
+        private void OnLoginSuccessfull() => this.Dispatcher.Invoke(() =>
+        {
+            // Opens the main-window
+            var win = new MainWindow(this.profile, this.cfg, this.credentials, this.authCode);
+
+            // Starts the window
+            win.Show();
+
+            // Closes the loading-window
+            this.backgroundLoadingWindow.Close();
+        });
+
+        #region util-functions
+
+        /// <summary>
+        /// Displays the given error to the user and asks if he wants to retry
+        /// </summary>
+        private void DisplayConnectionError(string title, string text, Action retry) => this.Dispatcher.Invoke(() =>
+        {
+            // Creates the window for the error
+            var win = new YesNoWindow(title, retry, Current.Shutdown, Lang.main_startup_getauth_retry, Lang.global_button_cancel, title, text);
+
+            // Displays the window
+            win.Show();
+        });
+
+        /// <summary>
+        /// Displays a technical error to the user can shuts-down the program
+        /// </summary>
+        private void DisplayTechnicalErrorAndClose(TechnicalError err) => this.Dispatcher.Invoke(() =>
+        {
+            // Creates the window with the acknowledgment
+            var win = new AcknowledgmentWindow(
+                Lang.request_error_tech_title,
+                err.GetTextInCurrentLanguage() + Lang.requests_error_tech_help,
+                Current.Shutdown,
+                Lang.global_button_ok
+            );
+
+            // Displays the window
+            win.Show();
+        });
+
+        #endregion utils-functions
+
+        #region login-process
+
+        /// <summary>
+        /// Requests all required values from the user and performs the login with the backend-server
+        /// </summary>
+        private void StartLoginProcess()
+        {
+            // Creates the background window
+            this.backgroundLoadingWindow = new LoadingWindow(Lang.startup_title)
+            {
+                DisplayText = Lang.startup_askconfig
+            };
+            // Shows the background window
+            this.backgroundLoadingWindow.Show();
+
+            // Loads the config
+            Config.GetConfigFromUser((isNew, cfg, pw) =>
+            {
+                // Checks if the config got newly created
+                if (isNew)
+                    // Opens a new config-edit window
+                    new ConfigWindow(cfg, pw).ShowDialog();
+
+                // Updates the config
+                this.cfg = cfg;
+
+                // Executes the config-loaded event
+                this.OnConfigLoaded();
+            }, Current.Shutdown);
+        }
+
+        /// <summary>
+        /// Executes when the config got loaded successfully and editing has been done
+        /// </summary>
+        private void OnConfigLoaded()
+        {
+            // Updates the window
+            this.backgroundLoadingWindow.DisplayText = Lang.startup_requestauth;
+
+            // Generates the credentials
+            this.credentials = new RequestData(cfg.Host, cfg.Port, cfg.UserId, cfg.PrivateKey);
+
+            // Creates the request
+            var authRequest = new AdminAuthcodeRequest()
+            {
+                OnEmailError = () =>
+                    this.DisplayConnectionError(
+                        Lang.request_error_email_title,
+                        Lang.request_error_email_text,
+                        OnConfigLoaded
+                    ),
+                OnCommonError = err =>
+                    this.DisplayConnectionError(
+                        Lang.request_error_common_title,
+                        err.GetTextInCurrentLanguage(),
+                        OnConfigLoaded
+                    ),
+                OnTechnicalError = this.DisplayTechnicalErrorAndClose,
+                OnSuccess = () => this.OnAuthcodeSend()
+            };
+
+            // Starts the request
+            Task.Run(() => authRequest.DoRequest(this.credentials));
+        }
+
+        /// <summary>
+        /// Executes when the auth-code got send via email
+        /// </summary>
+        private void OnAuthcodeSend() => this.Dispatcher.Invoke(() =>
+        {
+            // Updates the window
+            this.backgroundLoadingWindow.DisplayText = Lang.startup_sendauth;
+
+            // Creates the input form for the authcode
+            var win = new TextinputWindow(Lang.main_startup_askauth_title, Lang.main_startup_askauth_title, authCodeText =>
+            {
+                // Checks and gets the authcode for/as a long
+                if (!long.TryParse(authCodeText, out this.authCode))
+                {
+                    // Displays the error
+                    MessageBox.Show(Lang.startup_getauth_invalid);
+                    // Reasks the user
+                    OnAuthcodeSend();
+                    return;
+                }
+
+                // Executes the next step
+                this.OnUserinputAuthcode();
+            }, Current.Shutdown, Lang.global_button_ok, Lang.global_button_cancel);
+
+            // Displays the input form
+            win.Show();
+        });
+
+        /// <summary>
+        /// Executes when the user has input a valid authcode
+        /// </summary>
+        private void OnUserinputAuthcode()
+        {
+            // Prepares the request
+            var req = new AdminGetProfileRequest()
+            {
+                OnCommonError = err => DisplayConnectionError(Lang.request_error_common_title, err.GetTextInCurrentLanguage(), () => OnAuthcodeSend()),
+                OnTechnicalError = this.DisplayTechnicalErrorAndClose,
+                OnSuccess = prof =>
+                {
+                    // Updates the profile
+                    this.profile = prof;
+
+                    // Executes the callback
+                    this.OnLoginSuccessfull();
+                }
+            };
+
+            // Starts the request
+            Task.Run(()=>req.DoRequest(this.credentials, this.authCode));
+        }
+
+        #endregion login-process
     }
 }

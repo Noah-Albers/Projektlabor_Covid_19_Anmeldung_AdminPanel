@@ -559,6 +559,15 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lade/Erstelle Konfiguration.
+        /// </summary>
+        public static string startup_askconfig {
+            get {
+                return ResourceManager.GetString("startup.askconfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Der angegebene Text entspricht nicht dem Authcode-Format..
         /// </summary>
         public static string startup_getauth_invalid {
@@ -568,7 +577,25 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Laden.
+        ///   Looks up a localized string similar to Sende 2FA-Authcode Anfrage.
+        /// </summary>
+        public static string startup_requestauth {
+            get {
+                return ResourceManager.GetString("startup.requestauth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Senden des Authcodes.
+        /// </summary>
+        public static string startup_sendauth {
+            get {
+                return ResourceManager.GetString("startup.sendauth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Führe login durch.
         /// </summary>
         public static string startup_title {
             get {

@@ -285,11 +285,20 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="requests.error.tech.help" xml:space="preserve">
     <value> Bitte fragen Sie einen Techniker um hilfe bei diesem Problem.</value>
   </data>
+  <data name="startup.askconfig" xml:space="preserve">
+    <value>Lade/Erstelle Konfiguration</value>
+  </data>
   <data name="startup.getauth.invalid" xml:space="preserve">
     <value>Der angegebene Text entspricht nicht dem Authcode-Format.</value>
   </data>
+  <data name="startup.requestauth" xml:space="preserve">
+    <value>Sende 2FA-Authcode Anfrage</value>
+  </data>
+  <data name="startup.sendauth" xml:space="preserve">
+    <value>Senden des Authcodes</value>
+  </data>
   <data name="startup.title" xml:space="preserve">
-    <value>Laden</value>
+    <value>Führe login durch</value>
   </data>
   <data name="ui.register.autodeleteaccount" xml:space="preserve">
     <value>Mein Account soll nach 6 Wochen gelöscht werden.</value>

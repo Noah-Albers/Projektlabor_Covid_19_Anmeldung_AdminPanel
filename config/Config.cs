@@ -2,8 +2,8 @@
 using projektlabor.covid19login.adminpanel;
 using projektlabor.covid19login.adminpanel.config;
 using projektlabor.covid19login.adminpanel.security;
-using projektlabor.covid19login.adminpanel.windows.dialogs;
-using projektlabor.covid19login.adminpanel.windows.requests;
+using projektlabor.covid19login.adminpanel.windows.utils;
+using projektlabor.covid19login.adminpanel.windows.utils;
 using projektlabor.covid19login.adminpanel.Properties.langs;
 using System;
 using System.IO;
