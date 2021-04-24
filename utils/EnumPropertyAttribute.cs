@@ -3,7 +3,7 @@
 namespace projektlabor.covid19login.adminpanel.utils
 {
     [AttributeUsage(AttributeTargets.Field,AllowMultiple = true)]
-    class EnumProperty : Attribute
+    public class EnumProperty : Attribute
     {
 
         // The key
@@ -26,5 +26,14 @@ namespace projektlabor.covid19login.adminpanel.utils
         {
             return (T)this.Value;
         }
+    }
+
+    public static class EnumPropertyExtension
+    {
+        /// <summary>
+        /// Method to get the value of an enum-property from an enum.
+        /// </summary>
+        /// <returns>The stored object of the key. If the key could not be found, null</returns>
+        public static EnumProperty GetEnumProperty(this Enum enm, string key) => enm.GetAttribute<EnumProperty>(x => x.Key.Equals(key));
     }
 }

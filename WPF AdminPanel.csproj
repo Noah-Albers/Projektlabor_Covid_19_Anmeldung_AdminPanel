@@ -84,6 +84,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -96,6 +97,7 @@
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -122,7 +124,7 @@
     <Compile Include="connection\RequestData.cs" />
     <Compile Include="connection\requests\AdminAuthcodeRequest.cs" />
     <Compile Include="connection\requests\AdminEditUserRequest.cs" />
-    <Compile Include="connection\requests\AdminFrezeSelfRequest.cs" />
+    <Compile Include="connection\requests\AdminFreezeSelfRequest.cs" />
     <Compile Include="connection\requests\AdminGetProfileRequest.cs" />
     <Compile Include="connection\requests\AdminGrabUserRequest.cs" />
     <Compile Include="connection\requests\AdminInfectedContactsRequest.cs" />
@@ -147,20 +149,21 @@
     <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\requests\AcknowledgmentWindow.xaml.cs">
+    <Compile Include="windows\mainWindow\uielements\ActionButton.cs" />
+    <Compile Include="windows\utils\AcknowledgmentWindow.xaml.cs">
       <DependentUpon>AcknowledgmentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\configWindow\ConfigWindow.xaml.cs">
       <DependentUpon>ConfigWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\requests\TextinputWindow.xaml.cs">
+    <Compile Include="windows\utils\LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\utils\TextinputWindow.xaml.cs">
       <DependentUpon>TextinputWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\requests\YesNoWindow.xaml.cs">
+    <Compile Include="windows\utils\YesNoWindow.xaml.cs">
       <DependentUpon>YesNoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="windows\startup\StartupWindow.xaml.cs">
-      <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="uiElements\CustomPopup.xaml">
       <SubType>Designer</SubType>
@@ -174,7 +177,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\requests\AcknowledgmentWindow.xaml">
+    <Page Include="windows\utils\AcknowledgmentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,15 +207,15 @@
     <Compile Include="uiElements\CustomInput.xaml.cs">
       <DependentUpon>CustomInput.xaml</DependentUpon>
     </Compile>
-    <Page Include="windows\requests\TextinputWindow.xaml">
+    <Page Include="windows\utils\LoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\requests\YesNoWindow.xaml">
+    <Page Include="windows\utils\TextinputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\startup\StartupWindow.xaml">
+    <Page Include="windows\utils\YesNoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -278,6 +281,8 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="windows\mainWindow\subwindows\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

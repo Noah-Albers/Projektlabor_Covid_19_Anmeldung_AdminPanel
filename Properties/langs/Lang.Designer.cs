@@ -61,6 +61,42 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sind Sie sicher, dass Sie ihren Benutzeraccount sperren wollen?.
+        /// </summary>
+        public static string action_freeze_description {
+            get {
+                return ResourceManager.GetString("action.freeze.description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sperre Benutzeraccount.
+        /// </summary>
+        public static string action_freeze_loading {
+            get {
+                return ResourceManager.GetString("action.freeze.loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benutzerkonto sperren.
+        /// </summary>
+        public static string action_freeze_title {
+            get {
+                return ResourceManager.GetString("action.freeze.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account sperren.
+        /// </summary>
+        public static string action_freeze_yes {
+            get {
+                return ResourceManager.GetString("action.freeze.yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Benutzer/Administrator-ID.
         /// </summary>
         public static string config_adminid {
@@ -406,20 +442,92 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Authcode angeben.
+        ///   Looks up a localized string similar to Erneut versuchen.
         /// </summary>
-        public static string main_startup_askauth_title {
+        public static string global_button_retry {
             get {
-                return ResourceManager.GetString("main.startup.askauth.title", resourceCulture);
+                return ResourceManager.GetString("global_button_retry", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erneut versuchen.
+        ///   Looks up a localized string similar to Benutzer bearbeiten.
         /// </summary>
-        public static string main_startup_getauth_retry {
+        public static string main_btn_edituser {
             get {
-                return ResourceManager.GetString("main.startup.getauth.retry", resourceCulture);
+                return ResourceManager.GetString("main.btn.edituser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktdaten exportieren.
+        /// </summary>
+        public static string main_btn_export {
+            get {
+                return ResourceManager.GetString("main.btn.export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eigenes Konto sperren.
+        /// </summary>
+        public static string main_btn_freeze {
+            get {
+                return ResourceManager.GetString("main.btn.freeze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Benutzer is gesperrt).
+        /// </summary>
+        public static string main_info_frozen {
+            get {
+                return ResourceManager.GetString("main.info.frozen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ihr Authcode ist abgelaufen. Bitte starten Sie die Anwendung neu und loggen Sie sich neu ein..
+        /// </summary>
+        public static string main_reqerror_auth_expired {
+            get {
+                return ResourceManager.GetString("main.reqerror.auth.expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ihr Authcode ist invalid. Bitte starten Sie die Anwendung neu und loggen Sie sich neu ein..
+        /// </summary>
+        public static string main_reqerror_auth_invalid {
+            get {
+                return ResourceManager.GetString("main.reqerror.auth.invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafter Authcode.
+        /// </summary>
+        public static string main_reqerror_auth_title {
+            get {
+                return ResourceManager.GetString("main.reqerror.auth.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anscheinend haben sich ihre Zugriffsberechtigungen geändert. Bitte starten Sie die Anwendung neu und melden Sie sich neu an..
+        /// </summary>
+        public static string main_reqerror_permission {
+            get {
+                return ResourceManager.GetString("main.reqerror.permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keine Berechtigungen.
+        /// </summary>
+        public static string main_reqerror_permission_title {
+            get {
+                return ResourceManager.GetString("main.reqerror.permission.title", resourceCulture);
             }
         }
         
@@ -429,6 +537,24 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         public static string main_title {
             get {
                 return ResourceManager.GetString("main.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aktionsübersicht.
+        /// </summary>
+        public static string main_title_actions {
+            get {
+                return ResourceManager.GetString("main.title.actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benutzer.
+        /// </summary>
+        public static string main_title_username {
+            get {
+                return ResourceManager.GetString("main.title.username", resourceCulture);
             }
         }
         
@@ -478,7 +604,7 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler bei der Anfrage.
+        ///   Looks up a localized string similar to Bei der Anfrage ist etwas schief gelaufen.
         /// </summary>
         public static string request_error_common_title {
             get {
@@ -559,6 +685,24 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie ihren Authcode an, den Sie per Email erhalten haben..
+        /// </summary>
+        public static string startup_askauth_text {
+            get {
+                return ResourceManager.GetString("startup.askauth.text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authcode.
+        /// </summary>
+        public static string startup_askauth_title {
+            get {
+                return ResourceManager.GetString("startup.askauth.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lade/Erstelle Konfiguration.
         /// </summary>
         public static string startup_askconfig {
@@ -591,15 +735,6 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         public static string startup_sendauth {
             get {
                 return ResourceManager.GetString("startup.sendauth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Führe login durch.
-        /// </summary>
-        public static string startup_title {
-            get {
-                return ResourceManager.GetString("startup.title", resourceCulture);
             }
         }
         

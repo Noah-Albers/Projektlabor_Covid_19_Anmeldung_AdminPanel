@@ -15,7 +15,6 @@ namespace projektlabor.covid19login.adminpanel
 {
     public class Config
     {
-
         // Reference to the program-logger
         private static readonly Logger LOG = new Logger("Config");
 

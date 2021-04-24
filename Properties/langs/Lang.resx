@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="action.freeze.description" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie ihren Benutzeraccount sperren wollen?</value>
+  </data>
+  <data name="action.freeze.loading" xml:space="preserve">
+    <value>Sperre Benutzeraccount</value>
+  </data>
+  <data name="action.freeze.title" xml:space="preserve">
+    <value>Benutzerkonto sperren</value>
+  </data>
+  <data name="action.freeze.yes" xml:space="preserve">
+    <value>Account sperren</value>
+  </data>
   <data name="config.adminid" xml:space="preserve">
     <value>Benutzer/Administrator-ID</value>
   </data>
@@ -234,14 +246,44 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="global.button.ok" xml:space="preserve">
     <value>Bestätigen</value>
   </data>
-  <data name="main.startup.askauth.title" xml:space="preserve">
-    <value>Authcode angeben</value>
-  </data>
-  <data name="main.startup.getauth.retry" xml:space="preserve">
+  <data name="global_button_retry" xml:space="preserve">
     <value>Erneut versuchen</value>
+  </data>
+  <data name="main.btn.edituser" xml:space="preserve">
+    <value>Benutzer bearbeiten</value>
+  </data>
+  <data name="main.btn.export" xml:space="preserve">
+    <value>Kontaktdaten exportieren</value>
+  </data>
+  <data name="main.btn.freeze" xml:space="preserve">
+    <value>Eigenes Konto sperren</value>
+  </data>
+  <data name="main.info.frozen" xml:space="preserve">
+    <value>(Benutzer is gesperrt)</value>
+  </data>
+  <data name="main.reqerror.auth.expired" xml:space="preserve">
+    <value>Ihr Authcode ist abgelaufen. Bitte starten Sie die Anwendung neu und loggen Sie sich neu ein.</value>
+  </data>
+  <data name="main.reqerror.auth.invalid" xml:space="preserve">
+    <value>Ihr Authcode ist invalid. Bitte starten Sie die Anwendung neu und loggen Sie sich neu ein.</value>
+  </data>
+  <data name="main.reqerror.auth.title" xml:space="preserve">
+    <value>Fehlerhafter Authcode</value>
+  </data>
+  <data name="main.reqerror.permission" xml:space="preserve">
+    <value>Anscheinend haben sich ihre Zugriffsberechtigungen geändert. Bitte starten Sie die Anwendung neu und melden Sie sich neu an.</value>
+  </data>
+  <data name="main.reqerror.permission.title" xml:space="preserve">
+    <value>Keine Berechtigungen</value>
   </data>
   <data name="main.title" xml:space="preserve">
     <value>Projektlabor | Covid 19 Anmeldung | Administrator-Interface</value>
+  </data>
+  <data name="main.title.actions" xml:space="preserve">
+    <value>Aktionsübersicht</value>
+  </data>
+  <data name="main.title.username" xml:space="preserve">
+    <value>Benutzer</value>
   </data>
   <data name="request.error.common.authexpired" xml:space="preserve">
     <value>Der angegebene Authcode ist abgelaufen.</value>
@@ -259,7 +301,7 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
     <value>Die Verbindung mit dem Server konnte nicht hergestellt werden. I/O-Error</value>
   </data>
   <data name="request.error.common.title" xml:space="preserve">
-    <value>Fehler bei der Anfrage</value>
+    <value>Bei der Anfrage ist etwas schief gelaufen</value>
   </data>
   <data name="request.error.email.text" xml:space="preserve">
     <value>Server konnte die Email mit dem Auth-code nicht absenden.</value>
@@ -285,6 +327,12 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="requests.error.tech.help" xml:space="preserve">
     <value> Bitte fragen Sie einen Techniker um hilfe bei diesem Problem.</value>
   </data>
+  <data name="startup.askauth.text" xml:space="preserve">
+    <value>Bitte geben Sie ihren Authcode an, den Sie per Email erhalten haben.</value>
+  </data>
+  <data name="startup.askauth.title" xml:space="preserve">
+    <value>Authcode</value>
+  </data>
   <data name="startup.askconfig" xml:space="preserve">
     <value>Lade/Erstelle Konfiguration</value>
   </data>
@@ -296,9 +344,6 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   </data>
   <data name="startup.sendauth" xml:space="preserve">
     <value>Senden des Authcodes</value>
-  </data>
-  <data name="startup.title" xml:space="preserve">
-    <value>Führe login durch</value>
   </data>
   <data name="ui.register.autodeleteaccount" xml:space="preserve">
     <value>Mein Account soll nach 6 Wochen gelöscht werden.</value>

@@ -17,11 +17,11 @@ namespace projektlabor.covid19login.adminpanel.windows.utils
             set => this.Dispatcher.Invoke(()=>this.textdisplay.Text = value);
         }
 
-        public LoadingWindow(string title)
+        public LoadingWindow(string displayText = "Text")
         {
             InitializeComponent();
 
-            this.Title = title;
+            this.DisplayText = displayText;
         }
     }
 }

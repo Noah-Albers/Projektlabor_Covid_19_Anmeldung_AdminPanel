@@ -78,7 +78,7 @@ namespace projektlabor.covid19login.adminpanel
         private void DisplayConnectionError(string title, string text, Action retry) => this.Dispatcher.Invoke(() =>
         {
             // Creates the window for the error
-            var win = new YesNoWindow(title, retry, Current.Shutdown, Lang.main_startup_getauth_retry, Lang.global_button_cancel, title, text);
+            var win = new YesNoWindow(title, retry, Current.Shutdown, Lang.global_button_retry, Lang.global_button_cancel, title, text);
 
             // Displays the window
             win.Show();
@@ -111,10 +111,8 @@ namespace projektlabor.covid19login.adminpanel
         private void StartLoginProcess()
         {
             // Creates the background window
-            this.backgroundLoadingWindow = new LoadingWindow(Lang.startup_title)
-            {
-                DisplayText = Lang.startup_askconfig
-            };
+            this.backgroundLoadingWindow = new LoadingWindow(Lang.startup_askconfig);
+
             // Shows the background window
             this.backgroundLoadingWindow.Show();
 
@@ -177,7 +175,7 @@ namespace projektlabor.covid19login.adminpanel
             this.backgroundLoadingWindow.DisplayText = Lang.startup_sendauth;
 
             // Creates the input form for the authcode
-            var win = new TextinputWindow(Lang.main_startup_askauth_title, Lang.main_startup_askauth_title, authCodeText =>
+            var win = new TextinputWindow(Lang.startup_askauth_title, Lang.startup_askauth_text, authCodeText =>
             {
                 // Checks and gets the authcode for/as a long
                 if (!long.TryParse(authCodeText, out this.authCode))

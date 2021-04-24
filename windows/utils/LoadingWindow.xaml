@@ -9,7 +9,6 @@
         Background="#7A7A7A"
         xmlns:lang="clr-namespace:projektlabor.covid19login.adminpanel.Properties.langs"
         xmlns:uc="clr-namespace:projektlabor.covid19login.adminpanel.uiElements"
-        Title="Title"
         Height="450" Width="450" WindowStyle="None">
     <DockPanel>
         <TextBlock x:Name="textdisplay" Foreground="White" DockPanel.Dock="Top" HorizontalAlignment="Center" FontFamily="Consolas" FontSize="20" Margin="10" Text="Text"/>

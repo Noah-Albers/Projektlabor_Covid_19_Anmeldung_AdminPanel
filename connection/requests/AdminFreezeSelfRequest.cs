@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projektlabor.covid19login.adminpanel.connection.requests
 {
-    class AdminFrezeSelfRequest : PLCARequest
+    class AdminFreezeSelfRequest : PLCARequest
     {
 
         // Executor if the request has success
@@ -17,7 +17,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         public void DoRequest(RequestData creds,long authCode)
         {
             // Creates the logger
-            Logger log = this.GenerateLogger("AdminFrezeSelfRequest");
+            Logger log = this.GenerateLogger("AdminFreezeSelfRequest");
 
             // Performs the request
             this.DoRequest(creds, authCode, log, null,(_,_2)=>this.OnSuccess?.Invoke(),(err,data,logger)=>

@@ -1,13 +1,40 @@
-﻿<Window x:Class="projektlabor.covid19login.adminpanel.windows.mainWindow.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lang="clr-namespace:projektlabor.covid19login.adminpanel.Properties.langs"
+        xmlns:uiElements="clr-namespace:projektlabor.covid19login.adminpanel.uiElements" x:Class="projektlabor.covid19login.adminpanel.windows.mainWindow.MainWindow"
+        xmlns:own="clr-namespace:projektlabor.covid19login.adminpanel.windows.mainWindow.uielements"
         mc:Ignorable="d"
         Background="#7A7A7A"
-        xmlns:lang="clr-namespace:projektlabor.covid19login.adminpanel.Properties.langs"
-        Title="{x:Static lang:Lang.main_title}" Height="460.888" Width="638.658">
+        Title="{x:Static lang:Lang.main_title}" Height="506.802" Width="843.179">
     <Grid>
+        <DockPanel Margin="10">
+            <TextBlock DockPanel.Dock="Top" FontSize="28" FontFamily="Consolas" Foreground="White" Text="{x:Static lang:Lang.main_title_username}"/>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,15">
+                <TextBlock x:Name="textUsername" FontSize="20" FontFamily="Consolas" Foreground="OrangeRed" Text="Username"/>
 
+                <TextBlock Margin="5,0,0,0" x:Name="frozenText" FontSize="10" Foreground="#08f7fd" VerticalAlignment="Top" Text="{x:Static lang:Lang.main_info_frozen }"/>
+            </StackPanel>
+
+
+            <TextBlock DockPanel.Dock="Top" FontSize="28" FontFamily="Consolas" Foreground="White" Text="{x:Static lang:Lang.main_title_actions}" Margin="0,0,0,10"/>
+            <WrapPanel x:Name="actionButtons" DockPanel.Dock="Bottom" Orientation="Vertical" Margin="-1,0">
+                <WrapPanel.Style>
+                    <Style>
+                        <Style.Resources>
+                            <Style TargetType="{x:Type own:ActionButton}">
+                                <Setter Property="Margin" Value="2"/>
+                                <Setter Property="Padding" Value="5,0"/>
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </WrapPanel.Style>
+                <own:ActionButton FontSize="18" Permission="ADMIN" Content="{x:Static lang:Lang.main_btn_freeze}" Click="OnActionFreeze"/>
+                <own:ActionButton FontSize="18" Permission="ADMIN" Content="{x:Static lang:Lang.main_btn_edituser}"/>
+                <own:ActionButton FontSize="18" Permission="RESET_ADMIN" Content="{x:Static lang:Lang.main_btn_export}"/>
+            </WrapPanel>
+        </DockPanel>
     </Grid>
 </Window>
