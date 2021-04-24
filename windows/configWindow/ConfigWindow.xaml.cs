@@ -95,13 +95,19 @@ namespace projektlabor.covid19login.adminpanel.windows.configWindow
             // Sets the host
             this.cfg.Host = this.FieldHost.Text;
 
+
+            // Checks if the user-id couldn't be passed
+            if (!byte.TryParse(this.FieldAdminId.Text, out byte userid))
+            {
+                this.ShowError(Lang.config_save_userid);
+                return;
+            }
+            this.cfg.UserId = userid;
+
             try
             {
                 // Tries to save the config
-                this.cfg.SaveConfig(PLCA.CONFIG_PATH, this.password);
-
-                // Updates the main config
-                PLCA.LOADED_CONFIG = this.cfg;
+                this.cfg.SaveConfig(this.password);
 
                 // Closes the window
                 this.Close();

@@ -17,7 +17,10 @@ namespace projektlabor.covid19login.adminpanel
     {
 
         // Reference to the program-logger
-        private static readonly Logger log = new Logger("Config");
+        private static readonly Logger LOG = new Logger("Config");
+
+        // Path where the config-file is stored
+        private static readonly string CONFIG_PATH = "Config.bin";
 
         /// <summary>
         /// Port on the remote server on which the backend is listening
@@ -28,6 +31,11 @@ namespace projektlabor.covid19login.adminpanel
         /// Hostaddress/Ip of the remote server
         /// </summary>
         public string Host;
+
+        /// <summary>
+        /// Id of the admin
+        /// </summary>
+        public byte UserId;
 
         /// <summary>
         /// Key of this device that is used to authenticate on the remote server
@@ -41,14 +49,15 @@ namespace projektlabor.covid19login.adminpanel
         /// <param name="key">The key for encrypting the file</param>
         /// <exception cref="ConfigException">Something went wrong while encryption (Unknown)</exception>
         /// <exception cref="Exception">All exception that can be passed on by File.WriteAllBytes called with the filePath</exception>
-        public void SaveConfig(string filePath, string key)
+        public void SaveConfig(string key)
         {
             // Generates the object that will be saved as the config file
             JObject json = new JObject()
             {
                 ["port"] = this.Port,
                 ["host"] = this.Host,
-                ["rsa"] = SimpleSecurityUtils.SaveRSAToJson(this.PrivateKey)
+                ["rsa"] = SimpleSecurityUtils.SaveRSAToJson(this.PrivateKey),
+                ["userid"] = this.UserId
             };
 
             // Generates the actual key and iv from the previous plain text key
@@ -65,22 +74,21 @@ namespace projektlabor.covid19login.adminpanel
                 throw new ConfigException();
 
             // Writes all data to the file
-            File.WriteAllBytes(filePath, encData);
+            File.WriteAllBytes(CONFIG_PATH, encData);
         }
 
         /// <summary>
         /// Loads the given config-file, decryptes it using the passed key and loads it as a config object
         /// </summary>
-        /// <param name="filePath">The path to the configuration file.</param>
         /// <param name="key">The key to decrypt those bytes</param>
         /// <returns>The fully loaded config</returns>
         /// <exception cref="ConfigInvalidKeyException">If the given key couldn't decrypt the config</exception>
         /// <exception cref="ConfigCurruptedException">If the config seems to be currupted</exception>
         /// <exception cref="Exception">All exception that can be passed by File.ReadAllBytes using the filepath.</exception>
-        public static Config LoadConfig(string filePath, string key)
+        public static Config LoadConfig(string key)
         {
             // Reads the content of the passed config file
-            byte[] rawData = File.ReadAllBytes(filePath);
+            byte[] rawData = File.ReadAllBytes(CONFIG_PATH);
 
             // Generates the actual key and iv from the previous plain text key
             byte[] aesKey = SimpleSecurityUtils.HashSHA256(Encoding.UTF8.GetBytes(key));
@@ -105,6 +113,7 @@ namespace projektlabor.covid19login.adminpanel
                 cfg.Port = (int)json["port"];
                 cfg.Host = (string)json["host"] ?? string.Empty;
                 cfg.PrivateKey = SimpleSecurityUtils.LoadRSAFromJson((JObject)json["rsa"]);
+                cfg.UserId = (byte)json["userid"];
 
                 // Returns the fully loaded config
                 return cfg;
@@ -123,12 +132,12 @@ namespace projektlabor.covid19login.adminpanel
         /// <returns>Null if the user cancled the config-request; otherwise the loaded or newly created config</returns>
         public static void GetConfigFromUser(Action<bool, Config,string> OnReceive, Action OnCancel)
         {
-            log.Debug("Starting to request the config (From the user)");
+            LOG.Debug("Starting to request the config (From the user)");
 
             // Checks if a config file exists
-            if (!File.Exists(PLCA.CONFIG_PATH))
+            if (!File.Exists(CONFIG_PATH))
             {
-                log.Debug("Config does not exist, asking to create a new one.");
+                LOG.Debug("Config does not exist, asking to create a new one.");
 
                 // Creates a new window to ask the user for further instructions
                 var askNew = new YesNoWindow(
@@ -163,16 +172,16 @@ namespace projektlabor.covid19login.adminpanel
             {
                 try
                 {
-                    log
+                    LOG
                         .Debug("Received password, creating new config.")
                         .Critical("Password="+password);
 
                     // Tries to load the config and sends the received config
-                    OnReceive(false,LoadConfig(PLCA.CONFIG_PATH, password),password);
+                    OnReceive(false,LoadConfig(password),password);
                 }
                 catch (ConfigCurruptedException e)
                 {
-                    log
+                    LOG
                         .Warn("The previous config could be decrypted, but is currupted")
                         .Critical("Raw previous content="+e.RawInput);
 
@@ -195,7 +204,7 @@ namespace projektlabor.covid19login.adminpanel
                 }
                 catch (ConfigInvalidKeyException)
                 {
-                    log.Debug("User has specified an invalid password.");
+                    LOG.Debug("User has specified an invalid password.");
 
                     // Creates a window to inform the user
                     var ackWin = new AcknowledgmentWindow(
@@ -210,7 +219,7 @@ namespace projektlabor.covid19login.adminpanel
                 }
                 catch (Exception e)
                 {
-                    log
+                    LOG
                         .Debug("Unknown error occurred (Maybe a file error with permissions?)")
                         .Critical(e);
 
@@ -230,7 +239,7 @@ namespace projektlabor.covid19login.adminpanel
             // Executes once the user wants to create a new config (Because the old one got destroyed)
             void OnCreateNewConfig()
             {
-                log.Debug("Asking for the password of the new config");
+                LOG.Debug("Asking for the password of the new config");
 
                 // Asks for the new password
                 var askPass2 = new TextinputWindow(
@@ -269,21 +278,21 @@ namespace projektlabor.covid19login.adminpanel
 
                 try
                 {
-                    log
+                    LOG
                         .Debug("Saving new config")
                         .Critical("New Password="+password);
 
                     // Tries to save the config
-                    cfg.SaveConfig(PLCA.CONFIG_PATH, password);
+                    cfg.SaveConfig(password);
 
-                    log.Debug("Successfully saved the new config");
+                    LOG.Debug("Successfully saved the new config");
 
                     // Returns the new config
                     OnReceive(true,cfg,password);
                 }
                 catch (Exception e)
                 {
-                    log
+                    LOG
                         .Debug("Error saving the new config. Maybe a file-error with permissions?")
                         .Critical(e);
 

@@ -2,12 +2,9 @@
 using projektlabor.covid19login.adminpanel.connection.exceptions;
 using projektlabor.covid19login.adminpanel.utils;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace projektlabor.covid19login.adminpanel.connection.requests
 {
@@ -20,8 +17,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         public Action OnErrorIO;
         // Executer when the server returns a known handler but one that does not make sense. Eg. a permission error where to applicatation can by default only request resources where the permission is given
         public Action<NonsensicalError> OnNonsenseError;
-        // Executer has no permissions to request that endpoint
-        public Action OnNoPermissionError;
 
         /// <summary>
         /// Generates a logger with a random id that can be 
@@ -52,7 +47,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             switch (exc)
             {
                 case "auth":
-                    this.OnNoPermissionError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.NO_ENDPOINT_PERMISSIONS);
                     break;
                 case "handler":
                     this.OnNonsenseError?.Invoke(NonsensicalError.HANDLER);
@@ -151,13 +146,31 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
     /// <EnumProperty>lang - the name of the enum value that can be used to grab a certaint information from the Language file.</EnumProperty>
     public enum NonsensicalError
     {
-        [EnumProperty("lang", "database")] // The server database has an error (or could not be reached)
+        [EnumProperty("lang", "database")]    // The server database has an error (or could not be reached)
         SERVER_DATABASE,
-        [EnumProperty("lang", "handler")] // The requested endpoint does not exist
+        [EnumProperty("lang", "handler")]     // The requested endpoint does not exist
         HANDLER,
-        [EnumProperty("lang", "authkey")] // The rsa-key seems to not match up
+        [EnumProperty("lang", "authkey")]     // The rsa-key seems to not match up
         AUTH_KEY,
-        [EnumProperty("lang", "unknown")] // Unknown error
-        UNKNOWN
+        [EnumProperty("lang", "unknown")]     // Unknown error
+        UNKNOWN,
+        [EnumProperty("lang", "permission")]  // The user doesn't have permissions to access the requested endpoint
+        NO_ENDPOINT_PERMISSIONS  ,
+        [EnumProperty("lang", "frozen")]      // The account of the requesting-user is frozen
+        ACCOUNT_FROZEN,
+        [EnumProperty("lang", "authexpired")] // The given authcode is expired
+        AUTH_EXPIRED,
+        [EnumProperty("lang", "authinvalid")] // The given authcode is invalid
+        AUTH_INVALID
+    }
+
+    public static class NonsensicalErrorExtension
+    {
+        /// <summary>
+        /// Gets the key value of the language key from the nonsensical error
+        /// </summary>
+        /// <param name="err">The error</param>
+        /// <returns>the language key</returns>
+        public static string GetLanguageKey(this NonsensicalError err) => (string)err.GetAttribute<EnumProperty>(x => x.Key.Equals("lang")).Value;
     }
 }

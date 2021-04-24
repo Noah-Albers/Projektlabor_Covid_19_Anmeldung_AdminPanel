@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
-using projektlabor.covid19login.adminpanel;
-using projektlabor.covid19login.adminpanel.connection;
+﻿using projektlabor.covid19login.adminpanel.connection;
 using projektlabor.covid19login.adminpanel.connection.requests;
 using projektlabor.covid19login.adminpanel.datahandling.entities;
-using projektlabor.covid19login.adminpanel.security;
+using projektlabor.covid19login.adminpanel.Properties.langs;
+using projektlabor.covid19login.adminpanel.windows.configWindow;
+using projektlabor.covid19login.adminpanel.windows.dialogs;
+using projektlabor.covid19login.adminpanel.windows.requests;
 using System;
-using System.Diagnostics;
-using System.Security.Cryptography;
 using System.Windows;
 
 namespace projektlabor.covid19login.adminpanel
@@ -35,7 +34,9 @@ namespace projektlabor.covid19login.adminpanel
                 Current.Shutdown(-1);
             }
 
-            var obj = JObject.Parse(@"
+
+
+            /*var obj = JObject.Parse(@"
                  {
                      'modulus': 'z+1THEUom0elr2ECzc7zOgd59IIjzsRtsPKfnbu4wy82fSqwQde0+xToT+aa/LxmOy+OwC9LBqr78oJJotAotBIeYK2FubWNmhHfqWfG8c3ku7btdEcknTHiaOqlVGbwoE2/VIKZi1fZTVhXPY1fq77rwOLx86adcU8L8QrGxq7nZeNm1ruw2vRfFFV/LBQoqHMWGUxYwZo3HL2yOY3KaYcjqWVSHN2wfevf6pzuD95hvyv/Z7YnVDNsvWZn3y+fL5K0FUNUPksZIvhg5PTxFSqQsjcrOuBIUP616AxdOBTJphTCfDKX/OIg4QgkeMSlGRFsgbuBdCIyvTLDggREbQ==',
                      'exponent': 'AQAB',
@@ -84,7 +85,7 @@ namespace projektlabor.covid19login.adminpanel
 
             r.DoRequest(cred,authCode,u);*/
 
-            var r = new AdminInfectedContactsRequest()
+            /*var r = new AdminInfectedContactsRequest()
             {
                 OnErrorIO = () => write("I/O Error"),
                 OnNonsenseError = x => write("Common error: " + x),
@@ -104,7 +105,9 @@ namespace projektlabor.covid19login.adminpanel
 
             r.DoRequest(cred, authCode,new DateTime(2021,4,1),1,15);
 
-            Current.Shutdown(0);
+            Current.Shutdown(0);*/
         }
+
+        
     }
 }

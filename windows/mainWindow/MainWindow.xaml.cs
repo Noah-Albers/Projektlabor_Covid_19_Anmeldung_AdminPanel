@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using projektlabor.covid19login.adminpanel.connection.requests;
+using projektlabor.covid19login.adminpanel.Properties.langs;
+using projektlabor.covid19login.adminpanel.windows.configWindow;
+using projektlabor.covid19login.adminpanel.windows.requests;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using projektlabor.covid19login.adminpanel.utils;
+using projektlabor.covid19login.adminpanel.windows.dialogs;
+using System;
+using projektlabor.covid19login.adminpanel.datahandling.entities;
+using projektlabor.covid19login.adminpanel.connection;
 
 namespace projektlabor.covid19login.adminpanel.windows.mainWindow
 {
@@ -19,7 +16,7 @@ namespace projektlabor.covid19login.adminpanel.windows.mainWindow
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(SimpleAdminEntity profile, Config config, RequestData credentials, long authCode)
         {
             InitializeComponent();
         }

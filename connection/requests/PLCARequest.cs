@@ -10,13 +10,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     abstract class PLCARequest : SimplePLCARequest
     {
-        // Executer when the auth code is invalid
-        public Action OnAuthInvalidError;
-        // Executer when the auth code has expired
-        public Action OnAuthExpiredError;
-        // Executer when the account is frozen
-        public Action OnAccountFrozenError;
-
         /// <summary>
         /// Handles any fatal errors if any occure.
         /// Fatal errors are errors that occurre before the handler for the request is executed on the server.
@@ -33,15 +26,15 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
             {
                 case "auth.invalid":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnAuthInvalidError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_INVALID);
                     break;
                 case "auth.expired":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnAuthExpiredError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.AUTH_EXPIRED);
                     break;
                 case "auth.frozen":
                     log.Debug("Fatal error returned by remote server:" + exc);
-                    this.OnAccountFrozenError?.Invoke();
+                    this.OnNonsenseError?.Invoke(NonsensicalError.ACCOUNT_FROZEN);
                     break;
                 default:
                     base.HandlePreprocessingError(exc, log);

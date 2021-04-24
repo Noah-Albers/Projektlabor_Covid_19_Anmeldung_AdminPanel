@@ -6,8 +6,8 @@
         xmlns:lang="clr-namespace:projektlabor.covid19login.adminpanel.Properties.langs"
         xmlns:own="clr-namespace:projektlabor.covid19login.adminpanel.uiElements"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
-        Title="{x:Static lang:Lang.config_title}" Height="349.789" Width="525.915">
+        WindowStartupLocation="CenterOwner"
+        Title="{x:Static lang:Lang.config_title}" Height="430" Width="525">
     <Grid Background="Gray">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -42,6 +42,14 @@
                     ErrorOnOptional="*"
                     OnType="OnTypeHandler"
                     Title="{x:Static lang:Lang.config_rsa}"/>
+                <own:CustomInput
+                    x:Name="FieldAdminId"
+                    ErrorOnOptional="*"
+                    TypeRegex="^\d*$"
+                    Title="{x:Static lang:Lang.config_adminid}"
+                    MaxLength="3"
+                    OnType="OnTypeHandler"
+                    />
             </StackPanel>
         </Grid>
 

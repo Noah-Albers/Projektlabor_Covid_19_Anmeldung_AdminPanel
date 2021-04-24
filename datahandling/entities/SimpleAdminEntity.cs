@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace projektlabor.covid19login.adminpanel.datahandling.entities
 {
-    class SimpleAdminEntity : Entity
+    public class SimpleAdminEntity : Entity
     {
         public const string
         ID = "id",

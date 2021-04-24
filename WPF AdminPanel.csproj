@@ -137,7 +137,6 @@
     <Compile Include="datahandling\exceptions\EntitySerializeException.cs" />
     <Compile Include="datahandling\exceptions\RequiredEntitySerializeException.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="PLCA.cs" />
     <Compile Include="Properties\langs\Lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +158,9 @@
     </Compile>
     <Compile Include="windows\requests\YesNoWindow.xaml.cs">
       <DependentUpon>YesNoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\startup\StartupWindow.xaml.cs">
+      <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="uiElements\CustomPopup.xaml">
       <SubType>Designer</SubType>
@@ -207,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\requests\YesNoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\startup\StartupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -61,6 +61,15 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Benutzer/Administrator-ID.
+        /// </summary>
+        public static string config_adminid {
+            get {
+                return ResourceManager.GetString("config.adminid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Neues Passwort.
         /// </summary>
         public static string config_button_newpw {
@@ -97,8 +106,8 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr eingegebener Schlüssel ist richtig und die Datei konnte geladen werden.
-        ///Leider das Dateiformat kapput und kann nicht geladen werden.
+        ///   Looks up a localized string similar to Ihr eingegebener Schlüssel ist richtig, aber die Datei konnte geladen werden.
+        ///Leider ist das Dateiformat kapput und kann nicht geladen werden.
         ///Möchten Sie eine neue Konifiguration anlegen?
         ///Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopieren..
         /// </summary>
@@ -343,6 +352,15 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafte AdminId.
+        /// </summary>
+        public static string config_save_userid {
+            get {
+                return ResourceManager.GetString("config.save.userid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Konfiguration.
         /// </summary>
         public static string config_title {
@@ -370,616 +388,182 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sichere das Profil....
+        ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
-        public static string main_admin_edituser_loading {
+        public static string global_button_cancel {
             get {
-                return ResourceManager.GetString("main.admin.edituser.loading", resourceCulture);
+                return ResourceManager.GetString("global.button.cancel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Änderungen speichern.
+        ///   Looks up a localized string similar to Bestätigen.
         /// </summary>
-        public static string main_admin_edituser_save {
+        public static string global_button_ok {
             get {
-                return ResourceManager.GetString("main.admin.edituser.save", resourceCulture);
+                return ResourceManager.GetString("global.button.ok", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der ausgewählte Nutzer konnte nicht gefunden werden? Bitte versuchen Sie erneut ihn auszuwählen..
+        ///   Looks up a localized string similar to Authcode angeben.
         /// </summary>
-        public static string main_admin_edituser_select_error_not_found_text {
+        public static string main_startup_askauth_title {
             get {
-                return ResourceManager.GetString("main.admin.edituser.select.error.not_found.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer nicht gefunden.
-        /// </summary>
-        public static string main_admin_edituser_select_error_not_found_title {
-            get {
-                return ResourceManager.GetString("main.admin.edituser.select.error.not_found.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lade Benutzer....
-        /// </summary>
-        public static string main_admin_edituser_select_loading {
-            get {
-                return ResourceManager.GetString("main.admin.edituser.select.loading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Profil editieren.
-        /// </summary>
-        public static string main_admin_edituser_title {
-            get {
-                return ResourceManager.GetString("main.admin.edituser.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Einloggen.
-        /// </summary>
-        public static string main_admin_login_button {
-            get {
-                return ResourceManager.GetString("main.admin.login.button", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Passwort eingeben.
-        /// </summary>
-        public static string main_admin_login_field {
-            get {
-                return ResourceManager.GetString("main.admin.login.field", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Willkommen im Admin-Panel.
-        /// </summary>
-        public static string main_admin_title {
-            get {
-                return ResourceManager.GetString("main.admin.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Es ist ein unerwarteter Fehler aufgetreten. Bitte sagen Sie sofort einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_error_fatal_text {
-            get {
-                return ResourceManager.GetString("main.error.fatal.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kritischer Fehler aufgetreten.
-        /// </summary>
-        public static string main_error_fatal_title {
-            get {
-                return ResourceManager.GetString("main.error.fatal.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Abmelden.
-        /// </summary>
-        public static string main_login_button_end {
-            get {
-                return ResourceManager.GetString("main.login.button.end", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Anmelden.
-        /// </summary>
-        public static string main_login_button_start {
-            get {
-                return ResourceManager.GetString("main.login.button.start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ok.
-        /// </summary>
-        public static string main_login_error_button_ok {
-            get {
-                return ResourceManager.GetString("main.login.error.button.ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verlassen.
-        /// </summary>
-        public static string main_login_field_end {
-            get {
-                return ResourceManager.GetString("main.login.field.end", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nachname.
-        /// </summary>
-        public static string main_login_field_lastname {
-            get {
-                return ResourceManager.GetString("main.login.field.lastname", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Betreten.
-        /// </summary>
-        public static string main_login_field_start {
-            get {
-                return ResourceManager.GetString("main.login.field.start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vorname.
-        /// </summary>
-        public static string main_login_fields_firstname {
-            get {
-                return ResourceManager.GetString("main.login.fields.firstname", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
-        ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
-        ///Sollte weiterhin dies Meldung kommen, geben Sie bitte einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_login_get_error_not_found_text {
-            get {
-                return ResourceManager.GetString("main.login.get.error.not_found.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer nicht gefunden.
-        /// </summary>
-        public static string main_login_get_error_not_found_title {
-            get {
-                return ResourceManager.GetString("main.login.get.error.not_found.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Anmelden....
-        /// </summary>
-        public static string main_login_loading {
-            get {
-                return ResourceManager.GetString("main.login.loading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Abmelden....
-        /// </summary>
-        public static string main_login_loading_logout {
-            get {
-                return ResourceManager.GetString("main.login.loading.logout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sie sind anscheinend immer noch angemeldet.
-        ///Bitte wählen Sie ihren Benutzer noch einmal aus um sicher zu gehen..
-        /// </summary>
-        public static string main_login_login_error_loggedin_text {
-            get {
-                return ResourceManager.GetString("main.login.login.error.loggedin.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer ist immer noch angemeldet.
-        /// </summary>
-        public static string main_login_login_error_loggedin_title {
-            get {
-                return ResourceManager.GetString("main.login.login.error.loggedin.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
-        ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
-        ///Sollte weiterhin dies Meldung kommen, geben Sie bitte einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_login_login_error_not_found_text {
-            get {
-                return ResourceManager.GetString("main.login.login.error.not_found.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer nicht gefunden.
-        /// </summary>
-        public static string main_login_login_error_not_found_title {
-            get {
-                return ResourceManager.GetString("main.login.login.error.not_found.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sie sind anscheinend nicht mehr angemeldet.
-        ///Bitte wählen Sie ihren Benutzer noch einmal aus um sicher zu gehen..
-        /// </summary>
-        public static string main_login_logout_error_loggedout_text {
-            get {
-                return ResourceManager.GetString("main.login.logout.error.loggedout.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer ist bereits abgemeldet.
-        /// </summary>
-        public static string main_login_logout_error_loggedout_title {
-            get {
-                return ResourceManager.GetString("main.login.logout.error.loggedout.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Der Benutzer konnte nicht gefunden werden.
-        ///Bitte versuchen Sie erneut ihren Benutzer auszuwählen.
-        ///Sollte weiterhin dies Meldung kommen, geben Sie bitte einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_login_logout_error_not_found_text {
-            get {
-                return ResourceManager.GetString("main.login.logout.error.not_found.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Benutzer nicht gefunden.
-        /// </summary>
-        public static string main_login_logout_error_not_found_title {
-            get {
-                return ResourceManager.GetString("main.login.logout.error.not_found.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Willkommen    (Erfolgreich angemeldet).
-        /// </summary>
-        public static string main_login_rfid_success_title_login {
-            get {
-                return ResourceManager.GetString("main.login.rfid.success.title.login", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tschüss    (Erfolgreich abgemeldet).
-        /// </summary>
-        public static string main_login_rfid_success_title_logout {
-            get {
-                return ResourceManager.GetString("main.login.rfid.success.title.logout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lade Benutzer....
-        /// </summary>
-        public static string main_login_select_loading {
-            get {
-                return ResourceManager.GetString("main.login.select.loading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Anmelden.
-        /// </summary>
-        public static string main_login_title {
-            get {
-                return ResourceManager.GetString("main.login.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Schließen.
-        /// </summary>
-        public static string main_popup_close {
-            get {
-                return ResourceManager.GetString("main.popup.close", resourceCulture);
+                return ResourceManager.GetString("main.startup.askauth.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Erneut versuchen.
         /// </summary>
-        public static string main_popup_retrie {
+        public static string main_startup_getauth_retry {
             get {
-                return ResourceManager.GetString("main.popup.retrie", resourceCulture);
+                return ResourceManager.GetString("main.startup.getauth.retry", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ich akzeptiere, dass meine Daten gespeichert werden..
+        ///   Looks up a localized string similar to Projektlabor | Covid 19 Anmeldung | Administrator-Interface.
         /// </summary>
-        public static string main_register_accept {
+        public static string main_title {
             get {
-                return ResourceManager.GetString("main.register.accept", resourceCulture);
+                return ResourceManager.GetString("main.title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ihr Daten werden von uns über die Zeit der Covid-19 Pandemie gespeichert. Wenn Sie angeben, dass ihre Daten nach 6 Wochen gelöscht werden sollen, werden diese innerhalb von 4-6 Wochen von unserem System entfernt. Ihre Daten werden von uns nicht weitergegeben und sind nur von Administratoren einsehbar. Gespeichert werden ihre Daten auf unserem Server im Projektlabor und auf einem Goneo-server, welcher in Frankfurt steht..
+        ///   Looks up a localized string similar to Der angegebene Authcode ist abgelaufen..
         /// </summary>
-        public static string main_register_accept_text {
+        public static string request_error_nons_authexpired {
             get {
-                return ResourceManager.GetString("main.register.accept.text", resourceCulture);
+                return ResourceManager.GetString("request.error.nons.authexpired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registrieren.
+        ///   Looks up a localized string similar to Der angegebene Authcode ist falsch..
         /// </summary>
-        public static string main_register_button {
+        public static string request_error_nons_authinvalid {
             get {
-                return ResourceManager.GetString("main.register.button", resourceCulture);
+                return ResourceManager.GetString("request.error.nons.authinvalid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Benutzername wird bereits verwendet.
-        ///Bitte geben Sie ihren Namen an. Oder ändern Sie ihn etwas ab um Verwirrung zu vermeiden..
+        ///   Looks up a localized string similar to Ihr Account ist gesperrt (Eingefroren) und kann nicht genutzt werden..
         /// </summary>
-        public static string main_register_error_name {
+        public static string request_error_nons_frozen {
             get {
-                return ResourceManager.GetString("main.register.error.name", resourceCulture);
+                return ResourceManager.GetString("request.error.nons.frozen", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dieser RFIC-Code wird bereits verwendet. Bitte verwenden Sie einen anderen Code oder eine andere Karte..
+        ///   Looks up a localized string similar to Server konnte die Email mit dem Auth-code nicht absenden..
         /// </summary>
-        public static string main_register_error_rfid {
+        public static string requests_error_email_text {
             get {
-                return ResourceManager.GetString("main.register.error.rfid", resourceCulture);
+                return ResourceManager.GetString("requests.error.email.text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Registrieren.
+        ///   Looks up a localized string similar to Email-Fehler.
         /// </summary>
-        public static string main_register_error_title {
+        public static string requests_error_email_title {
             get {
-                return ResourceManager.GetString("main.register.error.title", resourceCulture);
+                return ResourceManager.GetString("requests.error.email.title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registriere....
+        ///   Looks up a localized string similar to Die Verbindung mit dem Server konnte nicht hergestellt werden..
         /// </summary>
-        public static string main_register_loading {
+        public static string requests_error_io_text {
             get {
-                return ResourceManager.GetString("main.register.loading", resourceCulture);
+                return ResourceManager.GetString("requests.error.io.text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben sich erfolgreich registriert. Bitte melden sie sich jetzt noch an und wenn sie gehen wieder ab..
+        ///   Looks up a localized string similar to Verbindung fehlgeschlagen.
         /// </summary>
-        public static string main_register_success_text {
+        public static string requests_error_io_title {
             get {
-                return ResourceManager.GetString("main.register.success.text", resourceCulture);
+                return ResourceManager.GetString("requests.error.io.title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erfolgreich registriert.
+        ///   Looks up a localized string similar to Ihr Authentifizierungs-Schlüssel scheint mit dem des Servers nicht über ein zu stimmen..
         /// </summary>
-        public static string main_register_success_title {
+        public static string requests_error_nons_authkey {
             get {
-                return ResourceManager.GetString("main.register.success.title", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.authkey", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Registrieren.
+        ///   Looks up a localized string similar to Es ist ein Fehler bei der Datenbankverbindung auf dem Server aufgetreteten..
         /// </summary>
-        public static string main_register_title {
+        public static string requests_error_nons_database {
             get {
-                return ResourceManager.GetString("main.register.title", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.database", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist wärend der Verbindung zum Remoteserver ein Verifizierungsfehler aufgetreten. Bitte versuchen Sie es erneut. Sollte es weiterhin nicht funktionieren, geben Sie bitte einem Projektlaborianer bescheid..
+        ///   Looks up a localized string similar to Der Server hat einen Handler-Fehler zurückgegeben..
         /// </summary>
-        public static string main_request_error_auth_info {
+        public static string requests_error_nons_handler {
             get {
-                return ResourceManager.GetString("main.request.error.auth.info", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.handler", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifizierungsfehler.
+        ///   Looks up a localized string similar to Ihr Account hat keine Rechte diese Aktion anzufragen..
         /// </summary>
-        public static string main_request_error_auth_title {
+        public static string requests_error_nons_permission {
             get {
-                return ResourceManager.GetString("main.request.error.auth.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ok.
-        /// </summary>
-        public static string main_request_error_button {
-            get {
-                return ResourceManager.GetString("main.request.error.button", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Serverseitige-schnittstelle konnte nicht gefunden werden. Bitte sagen Sie einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_request_error_handler_info {
-            get {
-                return ResourceManager.GetString("main.request.error.handler.info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Handler nicht bekannt.
-        /// </summary>
-        public static string main_request_error_handler_title {
-            get {
-                return ResourceManager.GetString("main.request.error.handler.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Verbindung zum Remoteserver konnte nicht hergestellt werden oder wurde verloren. Bitte versuchen Sie es erneut. Sollte es weiterhin nicht funktionieren, geben Sie bitte einem Projektlaborianer bescheid..
-        /// </summary>
-        public static string main_request_error_io_info {
-            get {
-                return ResourceManager.GetString("main.request.error.io.info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verbindung verloren.
-        /// </summary>
-        public static string main_request_error_io_title {
-            get {
-                return ResourceManager.GetString("main.request.error.io.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Es ist ein Schlüsselfehler aufgetreten..
-        /// </summary>
-        public static string main_request_error_technical_authkey_text {
-            get {
-                return ResourceManager.GetString("main.request.error.technical.authkey.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Auf dem Server ist ein Fehler mit der Datenbank aufgetreten..
-        /// </summary>
-        public static string main_request_error_technical_database_text {
-            get {
-                return ResourceManager.GetString("main.request.error.technical.database.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Der Server hat einen Handler-fehler zurückgegeben..
-        /// </summary>
-        public static string main_request_error_technical_handler_text {
-            get {
-                return ResourceManager.GetString("main.request.error.technical.handler.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Der Server zu wenig oder falsche Daten gesendet um die Anfrage zu verarbeiten..
-        /// </summary>
-        public static string main_request_error_technical_lessreturn_text {
-            get {
-                return ResourceManager.GetString("main.request.error.technical.lessreturn.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Es ist ein technischer Fehler aufgetreten, bitte geben Sie einem Projektlaborianer bescheid.
-        ///Beschreibung:
-        ///.
-        /// </summary>
-        public static string main_request_error_technical_text {
-            get {
-                return ResourceManager.GetString("main.request.error.technical.text", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.permission", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Technischer Fehler.
         /// </summary>
-        public static string main_request_error_technical_title {
+        public static string requests_error_nons_title {
             get {
-                return ResourceManager.GetString("main.request.error.technical.title", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist ein unbekannter Fehler aufgetreten. Bitte logs anschauen und ggf. kritisches Loggen benutzen..
+        ///   Looks up a localized string similar to Es ist ein unbekannter Fehler aufgetreten..
         /// </summary>
-        public static string main_request_error_technical_unknown_text {
+        public static string requests_error_nons_unknown {
             get {
-                return ResourceManager.GetString("main.request.error.technical.unknown.text", resourceCulture);
+                return ResourceManager.GetString("requests.error.nons.unknown", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist eine unbekannter Fehler aufgetreten. Bitte geben Sie einem Projektlaborianer bescheid..
+        ///   Looks up a localized string similar to Der angegebene Text entspricht nicht dem Authcode-Format..
         /// </summary>
-        public static string main_request_error_unknown_info {
+        public static string startup_getauth_invalid {
             get {
-                return ResourceManager.GetString("main.request.error.unknown.info", resourceCulture);
+                return ResourceManager.GetString("startup.getauth.invalid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unbekannter Fehler.
+        ///   Looks up a localized string similar to Laden.
         /// </summary>
-        public static string main_request_error_unknown_title {
+        public static string startup_title {
             get {
-                return ResourceManager.GetString("main.request.error.unknown.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Es konnte kein Benutzer mit dieser RFID gefunden werden. Bitte versichern Sie sich, dass Sie die richtige Karte gescannt haben und versuchen Sie erneut die Karte zu scannen. Sollt diese Meldung weiterhin angezeigt werden, fragen Sie einen Projektlaborianer ob er ihrem Profil die RFID-Karte zuweist..
-        /// </summary>
-        public static string main_rfid_error_loading_text {
-            get {
-                return ResourceManager.GetString("main.rfid.error.loading.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nutzer konnte nicht gefunden werden.
-        /// </summary>
-        public static string main_rfid_error_loading_title {
-            get {
-                return ResourceManager.GetString("main.rfid.error.loading.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Es konnte kein angeschlossener RFID-Scanner gefunden werden. Bitte versichern Sie sich, dass dieser angeschlossen ist. Es kann helfen den Scanner einmal raus und wieder ein zu stecken..
-        /// </summary>
-        public static string main_rfid_error_port_not_found_text {
-            get {
-                return ResourceManager.GetString("main.rfid.error.port_not_found.text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to RFID-Scanner wurde nicht gefunden..
-        /// </summary>
-        public static string main_rfid_error_port_not_found_title {
-            get {
-                return ResourceManager.GetString("main.rfid.error.port_not_found.title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suche Nutzer....
-        /// </summary>
-        public static string main_rfid_loading {
-            get {
-                return ResourceManager.GetString("main.rfid.loading", resourceCulture);
+                return ResourceManager.GetString("startup.title", resourceCulture);
             }
         }
         

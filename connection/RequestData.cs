@@ -2,7 +2,7 @@
 
 namespace projektlabor.covid19login.adminpanel.connection
 {
-    struct RequestData
+    public struct RequestData
     {
         // User-data (Credentials) and hosts for the request
         public readonly string Host;
