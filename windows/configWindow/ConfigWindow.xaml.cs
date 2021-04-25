@@ -2,11 +2,8 @@
 using Newtonsoft.Json.Linq;
 using projektlabor.covid19login.adminpanel.security;
 using projektlabor.covid19login.adminpanel.windows.utils;
-using projektlabor.covid19login.adminpanel.windows.utils;
-using projektlabor.covid19login.adminpanel;
 using projektlabor.covid19login.adminpanel.Properties.langs;
 using System;
-using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 

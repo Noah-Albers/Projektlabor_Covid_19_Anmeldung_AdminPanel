@@ -11,18 +11,15 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
 {
     class AdminEditUserRequest : PLCARequest
     {
-        // Executor if the request has success
+        // Executes if the request has success
         public Action OnSuccess;
+
+        // Executes if the given entity has a missing field that is required
+        public Action<string/*Keyname*/> OnMissingFieldError;
 
         protected override int GetEndpointId() => 9;
 
-        /// <summary>
-        /// 
-        /// </summary>
         /// <exception cref="RequiredEntitySerializeException">If the user failed to save (Required attribute not given)</exception>
-        /// <param name="creds"></param>
-        /// <param name="authCode"></param>
-        /// <param name="user"></param>
         public void DoRequest(RequestData creds,long authCode,UserEntity user)
         {
             // Creates the logger
@@ -36,9 +33,9 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 // Saves the user to the entity
                 user.Save(request, UserEntity.REQUIRED_ATTRIBUTE_LIST, UserEntity.OPTIONAL_ATTRIBUTE_LIST);
             }
-            catch (RequiredEntitySerializeException)
+            catch (RequiredEntitySerializeException e)
             {
-                throw;
+                this.OnMissingFieldError?.Invoke(e.KeyName);
             }
 
             // Starts the request

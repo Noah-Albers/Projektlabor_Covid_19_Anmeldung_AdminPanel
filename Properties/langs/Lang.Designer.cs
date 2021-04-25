@@ -532,6 +532,60 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Speichern.
+        /// </summary>
+        public static string main_sub_edituser_accept {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abbrechen.
+        /// </summary>
+        public static string main_sub_edituser_cancel {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Der ausgewählte Benutzer konnte nicht gefunden werden? Das sollte eigentlich nicht passieren. Bitte versuche es nochmal..
+        /// </summary>
+        public static string main_sub_edituser_notfound_text {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.notfound.text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benutzer konnte nicht gefunden werden.
+        /// </summary>
+        public static string main_sub_edituser_notfound_title {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.notfound.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Der Benutzer wurde erfolgreich gespeichert..
+        /// </summary>
+        public static string main_sub_edituser_success {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benutzer bearbeiten.
+        /// </summary>
+        public static string main_sub_edituser_title {
+            get {
+                return ResourceManager.GetString("main.sub.edituser.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Projektlabor | Covid 19 Anmeldung | Administrator-Interface.
         /// </summary>
         public static string main_title {
@@ -811,7 +865,7 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte geben Sie eine valide Email-Adresse an..
+        ///   Looks up a localized string similar to Email ist invalid.
         /// </summary>
         public static string ui_register_opterror_email {
             get {

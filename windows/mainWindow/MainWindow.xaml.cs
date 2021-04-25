@@ -6,6 +6,7 @@ using projektlabor.covid19login.adminpanel.Properties.langs;
 using projektlabor.covid19login.adminpanel.connection.requests;
 using System.Threading.Tasks;
 using projektlabor.covid19login.adminpanel.windows.mainWindow.uielements;
+using projektlabor.covid19login.adminpanel.windows.mainWindow.subwindows;
 
 namespace projektlabor.covid19login.adminpanel.windows.mainWindow
 {
@@ -87,7 +88,7 @@ namespace projektlabor.covid19login.adminpanel.windows.mainWindow
             // Checks the error for special handle cases
             switch (err)
             {
-                case TechnicalError.AUTH_KEY:
+                case TechnicalError.NO_ENDPOINT_PERMISSIONS:
                     // Informs the user and closes the application
                     this.OpenErrorInfo(
                         Lang.main_reqerror_permission_title,
@@ -185,7 +186,15 @@ namespace projektlabor.covid19login.adminpanel.windows.mainWindow
                 this.UpdateMenuByProfile();
             });
         }
+        private void OnActionEditUser(object sender, RoutedEventArgs e)
+            => new MainEdituserSubWindow(
+                this.TechnicalErrorHandler,
+                this.CommonErrorHandler,
+                this.credentials,
+                this.authCode
+               ).ShowDialog();
 
         #endregion Actions
+
     }
 }

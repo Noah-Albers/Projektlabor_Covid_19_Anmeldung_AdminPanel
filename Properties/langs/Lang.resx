@@ -276,6 +276,24 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="main.reqerror.permission.title" xml:space="preserve">
     <value>Keine Berechtigungen</value>
   </data>
+  <data name="main.sub.edituser.accept" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="main.sub.edituser.cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="main.sub.edituser.notfound.text" xml:space="preserve">
+    <value>Der ausgewählte Benutzer konnte nicht gefunden werden? Das sollte eigentlich nicht passieren. Bitte versuche es nochmal.</value>
+  </data>
+  <data name="main.sub.edituser.notfound.title" xml:space="preserve">
+    <value>Benutzer konnte nicht gefunden werden</value>
+  </data>
+  <data name="main.sub.edituser.success" xml:space="preserve">
+    <value>Der Benutzer wurde erfolgreich gespeichert.</value>
+  </data>
+  <data name="main.sub.edituser.title" xml:space="preserve">
+    <value>Benutzer bearbeiten</value>
+  </data>
   <data name="main.title" xml:space="preserve">
     <value>Projektlabor | Covid 19 Anmeldung | Administrator-Interface</value>
   </data>
@@ -370,7 +388,7 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
     <value>Wohnort</value>
   </data>
   <data name="ui.register.opterror.email" xml:space="preserve">
-    <value>Bitte geben Sie eine valide Email-Adresse an.</value>
+    <value>Email ist invalid</value>
   </data>
   <data name="ui.register.plz" xml:space="preserve">
     <value>PLZ</value>

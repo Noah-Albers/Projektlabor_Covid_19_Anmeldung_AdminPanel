@@ -145,9 +145,18 @@
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
     <Compile Include="security\SimpleSecurityUtils.cs" />
+    <Compile Include="uiElements\UserEditPanel.xaml.cs">
+      <DependentUpon>UserEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uiElements\UserSearch.xaml.cs">
+      <DependentUpon>UserSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utils\EnumPropertyAttribute.cs" />
     <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\mainWindow\subwindows\MainEdituserSubWindow.xaml.cs">
+      <DependentUpon>MainEdituserSubWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\mainWindow\uielements\ActionButton.cs" />
     <Compile Include="windows\utils\AcknowledgmentWindow.xaml.cs">
@@ -173,7 +182,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="uiElements\UserEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="uiElements\UserSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="windows\mainWindow\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\mainWindow\subwindows\MainEdituserSubWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -270,9 +291,6 @@
     <Resource Include="rsc\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="rsc\Icon_DeleteButton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="rsc\Background.png" />
   </ItemGroup>
   <ItemGroup>
@@ -281,8 +299,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="windows\mainWindow\subwindows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
