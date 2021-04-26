@@ -1,4 +1,5 @@
-﻿using projektlabor.covid19login.adminpanel.connection;
+﻿using OfficeOpenXml;
+using projektlabor.covid19login.adminpanel.connection;
 using projektlabor.covid19login.adminpanel.connection.requests;
 using projektlabor.covid19login.adminpanel.datahandling.entities;
 using projektlabor.covid19login.adminpanel.Properties.langs;
@@ -33,6 +34,9 @@ namespace projektlabor.covid19login.adminpanel
 
         public App()
         {
+            // Disables the licence for epplus
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
             // Starts the logger
             try
             {

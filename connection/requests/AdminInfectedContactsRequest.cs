@@ -9,7 +9,7 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
     class AdminInfectedContactsRequest : PLCARequest
     {
         // Executer once the request finishes successfully
-        public Action<KeyValuePair<UserEntity, ContactInfoEntity[]>[]> OnSuccess;
+        public Action<UserEntity/*profile*/, KeyValuePair<UserEntity, ContactInfoEntity[]>[]/*contacts*/> OnSuccess;
         // Executer if the user could not be found
         public Action OnNotFoundError;
 
@@ -58,7 +58,42 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
         private void OnReceive(JObject data,Logger log)
         {
             // Gets the passed users and contacts
-            var info = ((JArray)data["users"])
+            var info = this.ParseContactsFromJson((JArray)data["users"]);
+
+            // Parses the users profile
+            UserEntity profile = new UserEntity();
+            profile.Load((JObject)data["profile"], UserEntity.REQUIRED_ATTRIBUTE_LIST, UserEntity.OPTIONAL_ATTRIBUTE_LIST);
+
+            // Executes the success callback
+            this.OnSuccess?.Invoke(profile,info);
+        }
+
+        // Executer if a failed response gets received
+        private void OnFailure(string errorCode,JObject data,Logger log)
+        {
+            // Checks the error code
+            switch (errorCode)
+            {
+                case "database":
+                    this.OnCommonError?.Invoke(CommonError.SERVER_DATABASE);
+                    break;
+                case "not_found":
+                    this.OnNotFoundError?.Invoke();
+                    break;
+                default:
+                    throw new Exception();
+            }
+        }
+
+        /// <summary>
+        /// Takes a json-array and parses it into the contact info-objects
+        /// </summary>
+        /// <param name="jContacts">The array with all contacts and contact-infos</param>
+        /// <returns>A pairs of users with their contact infos (All times they had contact with a person)</returns>
+        /// <exception cref="Exception">Any exception such as error with invalid contacts will be forwarded</exception>
+        private KeyValuePair<UserEntity, ContactInfoEntity[]>[] ParseContactsFromJson(JArray jContacts)
+        {
+            return jContacts
                 // Maps them to their form
                 .Select(instance =>
                 {
@@ -86,26 +121,6 @@ namespace projektlabor.covid19login.adminpanel.connection.requests
                 })
                 // Maps the user-contacts to an array
                 .ToArray();
-
-            // Executes the success callback
-            this.OnSuccess?.Invoke(info);
-        }
-
-        // Executer if a failed response gets received
-        private void OnFailure(string errorCode,JObject data,Logger log)
-        {
-            // Checks the error code
-            switch (errorCode)
-            {
-                case "database":
-                    this.OnCommonError?.Invoke(CommonError.SERVER_DATABASE);
-                    break;
-                case "not_found":
-                    this.OnNotFoundError?.Invoke();
-                    break;
-                default:
-                    throw new Exception();
-            }
         }
     }
 }
