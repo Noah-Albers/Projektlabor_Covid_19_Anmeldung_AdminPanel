@@ -33,7 +33,7 @@
                 </WrapPanel.Style>
                 <own:ActionButton FontSize="18" Permission="ADMIN" Content="{x:Static lang:Lang.main_btn_freeze}" Click="OnActionFreeze"/>
                 <own:ActionButton FontSize="18" Permission="ADMIN" Content="{x:Static lang:Lang.main_btn_edituser}" Click="OnActionEditUser"/>
-                <own:ActionButton FontSize="18" Permission="RESET_ADMIN" Content="{x:Static lang:Lang.main_btn_export}"/>
+                <own:ActionButton FontSize="18" Permission="ADMIN" Content="{x:Static lang:Lang.main_btn_export}" Click="OnActionExportContacts"/>
             </WrapPanel>
         </DockPanel>
     </Grid>

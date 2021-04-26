@@ -276,6 +276,18 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="main.reqerror.permission.title" xml:space="preserve">
     <value>Keine Berechtigungen</value>
   </data>
+  <data name="main.sub.contacts.date" xml:space="preserve">
+    <value>Bitte füllen Sie das Feld für das Datum, ab welchem die Kontakte gezählt werden sollen, aus.</value>
+  </data>
+  <data name="main.sub.contacts.req.user" xml:space="preserve">
+    <value>Der ausgewählte Benutzer konnte nicht gefunden werden? Bitte versuche es nochmal.</value>
+  </data>
+  <data name="main.sub.contacts.time" xml:space="preserve">
+    <value>Bitte füllen Sie das Feld mit der Anzahl an Minuten, welche für die Aerosole mitberechnet werden sollen, aus.</value>
+  </data>
+  <data name="main.sub.contacts.user" xml:space="preserve">
+    <value>Bitte wählen Sie den Benutzer aus, welcher mit Covid-19 infiziert ist.</value>
+  </data>
   <data name="main.sub.edituser.accept" xml:space="preserve">
     <value>Speichern</value>
   </data>
@@ -416,5 +428,11 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   </data>
   <data name="ui.registerinput.regexerror.default" xml:space="preserve">
     <value>Fehlerhaft</value>
+  </data>
+  <data name="ui.usersearch.button" xml:space="preserve">
+    <value>Profil auswählen</value>
+  </data>
+  <data name="ui.userselect.button" xml:space="preserve">
+    <value>&lt;&lt;Benutzer auswählen&gt;&gt;</value>
   </data>
 </root>

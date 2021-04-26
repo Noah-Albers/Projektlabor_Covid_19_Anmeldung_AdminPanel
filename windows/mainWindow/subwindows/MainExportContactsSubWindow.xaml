@@ -1,0 +1,82 @@
+﻿<local:MainSubWindow x:Class="projektlabor.covid19login.adminpanel.windows.mainWindow.subwindows.MainExportContactsSubWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projektlabor.covid19login.adminpanel.windows.mainWindow.subwindows"
+        xmlns:uiElements="clr-namespace:projektlabor.covid19login.adminpanel.uiElements"
+        xmlns:lang="clr-namespace:projektlabor.covid19login.adminpanel.Properties.langs"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Background="#7A7A7A"
+        Height="389.135" Width="514.295">
+    <Grid>
+        <DockPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+
+            <!--Title-->
+            <TextBlock Text="Kontaktdaten exportieren" FontFamily="Consolas" Foreground="White" HorizontalAlignment="Center" FontSize="25" DockPanel.Dock="Top"/>
+
+            <!--#region User-selection-->
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="00,20,0,0">
+                <uiElements:CustomPopup DockPanel.Dock="Right" Margin="0,0,10,0">
+                    <uiElements:CustomPopup.ButtonContent>
+                        <Image Source="../../../rsc/Icon_InfoButton.png" MaxHeight="20"/>
+                    </uiElements:CustomPopup.ButtonContent>
+                    <uiElements:CustomPopup.PopupContent>
+                        <TextBlock Foreground="White" Background="#5F5F5F" TextWrapping="Wrap" Text="{x:Static lang:Lang.ui_register_autodeleteaccount_text}" FontSize="20"/>
+                    </uiElements:CustomPopup.PopupContent>
+                </uiElements:CustomPopup>
+                <TextBlock DockPanel.Dock="Top" Text="Infezierter Benutzer" FontFamily="Consolas" Foreground="White" FontSize="20"/>
+            </StackPanel>
+            <uiElements:UserSelect OnRequestUsers="OnUserSelectRequestUsers" x:Name="userSelect" DockPanel.Dock="Top" HorizontalAlignment="Left" Width="300"/>
+
+            <!--#endregion User-selection-->
+
+            <!--#region Aerosole-time-selection-->
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="00,20,0,0">
+                <uiElements:CustomPopup DockPanel.Dock="Right" Margin="0,0,10,0">
+                    <uiElements:CustomPopup.ButtonContent>
+                        <Image Source="../../../rsc/Icon_InfoButton.png" MaxHeight="20"/>
+                    </uiElements:CustomPopup.ButtonContent>
+                    <uiElements:CustomPopup.PopupContent>
+                        <TextBlock Foreground="White" Background="#5F5F5F" TextWrapping="Wrap" Text="{x:Static lang:Lang.ui_register_autodeleteaccount_text}" FontSize="20"/>
+                    </uiElements:CustomPopup.PopupContent>
+                </uiElements:CustomPopup>
+
+                <TextBlock  Text="Aerosole-Zeit (Minuten)" FontFamily="Consolas" Foreground="White" FontSize="20"/>
+            </StackPanel>
+            <TextBox Text="15" Width="300" x:Name="timeSelect" DockPanel.Dock="Top" FontFamily="Consolas" FontSize="20" HorizontalAlignment="Left"/>
+
+            <!--#endregion Aerosole-time-selection-->
+
+            <!--#region Date-selection-->
+
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="00,20,0,0">
+                <uiElements:CustomPopup DockPanel.Dock="Right" Margin="0,0,10,0">
+                    <uiElements:CustomPopup.ButtonContent>
+                        <Image Source="../../../rsc/Icon_InfoButton.png" MaxHeight="20"/>
+                    </uiElements:CustomPopup.ButtonContent>
+                    <uiElements:CustomPopup.PopupContent>
+                        <TextBlock Foreground="White" Background="#5F5F5F" TextWrapping="Wrap" Text="{x:Static lang:Lang.ui_register_autodeleteaccount_text}" FontSize="20"/>
+                    </uiElements:CustomPopup.PopupContent>
+                </uiElements:CustomPopup>
+
+                <TextBlock  Text="Auswahl ab Datum" FontFamily="Consolas" Foreground="White" FontSize="20"/>
+            </StackPanel>
+            <DatePicker Width="300" x:Name="dateSelect" DockPanel.Dock="Top" FontFamily="Consolas" FontSize="20" HorizontalAlignment="Left"/>
+
+            <!--#endregion Aerosole-time-selection-->
+
+            <!--Export button-->
+            <Button DockPanel.Dock="Top" HorizontalAlignment="Left" Content="Exportieren" FontFamily="Consolas" FontSize="20" Margin="0,20,0,0" Padding="5,2" Click="OnExportButtonClicked"/>
+
+        </DockPanel>
+        <Grid x:Name="OverlayLoading" Background="#6000" Visibility="Collapsed">
+            <Border Background="Gray" BorderBrush="DimGray" BorderThickness="2" CornerRadius="5" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Center">
+                <uiElements:LoadingAnimation Padding="20" DockPanel.Dock="Top"/>
+            </Border>
+        </Grid>
+    </Grid>
+</local:MainSubWindow>

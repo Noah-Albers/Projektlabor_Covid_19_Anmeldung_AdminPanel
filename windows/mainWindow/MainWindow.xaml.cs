@@ -186,8 +186,17 @@ namespace projektlabor.covid19login.adminpanel.windows.mainWindow
                 this.UpdateMenuByProfile();
             });
         }
+
         private void OnActionEditUser(object sender, RoutedEventArgs e)
             => new MainEdituserSubWindow(
+                this.TechnicalErrorHandler,
+                this.CommonErrorHandler,
+                this.credentials,
+                this.authCode
+               ).ShowDialog();
+
+        private void OnActionExportContacts(object sender, RoutedEventArgs e)
+            => new MainExportContactsSubWindow(
                 this.TechnicalErrorHandler,
                 this.CommonErrorHandler,
                 this.credentials,

@@ -532,6 +532,42 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte füllen Sie das Feld für das Datum, ab welchem die Kontakte gezählt werden sollen, aus..
+        /// </summary>
+        public static string main_sub_contacts_date {
+            get {
+                return ResourceManager.GetString("main.sub.contacts.date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Der ausgewählte Benutzer konnte nicht gefunden werden? Bitte versuche es nochmal..
+        /// </summary>
+        public static string main_sub_contacts_req_user {
+            get {
+                return ResourceManager.GetString("main.sub.contacts.req.user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte füllen Sie das Feld mit der Anzahl an Minuten, welche für die Aerosole mitberechnet werden sollen, aus..
+        /// </summary>
+        public static string main_sub_contacts_time {
+            get {
+                return ResourceManager.GetString("main.sub.contacts.time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte wählen Sie den Benutzer aus, welcher mit Covid-19 infiziert ist..
+        /// </summary>
+        public static string main_sub_contacts_user {
+            get {
+                return ResourceManager.GetString("main.sub.contacts.user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Speichern.
         /// </summary>
         public static string main_sub_edituser_accept {
@@ -951,6 +987,24 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         public static string ui_registerinput_regexerror_default {
             get {
                 return ResourceManager.GetString("ui.registerinput.regexerror.default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil auswählen.
+        /// </summary>
+        public static string ui_usersearch_button {
+            get {
+                return ResourceManager.GetString("ui.usersearch.button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;&lt;Benutzer auswählen&gt;&gt;.
+        /// </summary>
+        public static string ui_userselect_button {
+            get {
+                return ResourceManager.GetString("ui.userselect.button", resourceCulture);
             }
         }
     }

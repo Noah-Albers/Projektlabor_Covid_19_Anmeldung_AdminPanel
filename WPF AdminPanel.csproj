@@ -151,6 +151,9 @@
     <Compile Include="uiElements\UserSearch.xaml.cs">
       <DependentUpon>UserSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="uiElements\UserSelect.xaml.cs">
+      <DependentUpon>UserSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utils\EnumPropertyAttribute.cs" />
     <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -158,6 +161,10 @@
     <Compile Include="windows\mainWindow\subwindows\MainEdituserSubWindow.xaml.cs">
       <DependentUpon>MainEdituserSubWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\mainWindow\subwindows\MainExportContactsSubWindow.xaml.cs">
+      <DependentUpon>MainExportContactsSubWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\mainWindow\subwindows\MainSubWindow.cs" />
     <Compile Include="windows\mainWindow\uielements\ActionButton.cs" />
     <Compile Include="windows\utils\AcknowledgmentWindow.xaml.cs">
       <DependentUpon>AcknowledgmentWindow.xaml</DependentUpon>
@@ -190,11 +197,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="uiElements\UserSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\mainWindow\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\mainWindow\subwindows\MainEdituserSubWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\mainWindow\subwindows\MainExportContactsSubWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
