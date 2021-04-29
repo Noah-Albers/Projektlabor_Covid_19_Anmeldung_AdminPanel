@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace projektlabor.covid19login.adminpanel.datahandling.entities
 {
-    class ContactInfoEntity : Entity
+    public class ContactInfoEntity : Entity
     {
 
        public const string

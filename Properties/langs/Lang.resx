@@ -240,6 +240,75 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   <data name="config.wrongpw.title" xml:space="preserve">
     <value>Falsches Passwort</value>
   </data>
+  <data name="excel.aerosoles" xml:space="preserve">
+    <value>Aerosole</value>
+  </data>
+  <data name="excel.button.back" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="excel.contacts.contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="excel.contacts.contactime" xml:space="preserve">
+    <value>Kontaktzeit</value>
+  </data>
+  <data name="excel.contacts.longesttime" xml:space="preserve">
+    <value>Längste Kontaktzeit</value>
+  </data>
+  <data name="excel.contacts.showmore" xml:space="preserve">
+    <value>Mehr</value>
+  </data>
+  <data name="excel.contacts.start.contact" xml:space="preserve">
+    <value>Ankunft Kontakt</value>
+  </data>
+  <data name="excel.contacts.start.infected" xml:space="preserve">
+    <value>Ankunft Infezierter</value>
+  </data>
+  <data name="excel.contacts.stop.contact" xml:space="preserve">
+    <value>Abfahrt Kontakt</value>
+  </data>
+  <data name="excel.contacts.stop.infected" xml:space="preserve">
+    <value>Abfahrt Infezierter</value>
+  </data>
+  <data name="excel.overview" xml:space="preserve">
+    <value>Übersicht</value>
+  </data>
+  <data name="excel.title.contacperson" xml:space="preserve">
+    <value>Kontaktperson</value>
+  </data>
+  <data name="excel.title.contacts" xml:space="preserve">
+    <value>Kontaktpersonen</value>
+  </data>
+  <data name="excel.title.contacttimes" xml:space="preserve">
+    <value>Kontaktzeiten</value>
+  </data>
+  <data name="excel.title.infected" xml:space="preserve">
+    <value>Infizierte Person</value>
+  </data>
+  <data name="excel.user.email" xml:space="preserve">
+    <value>Email-Adresse</value>
+  </data>
+  <data name="excel.user.lastname" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="excel.user.location" xml:space="preserve">
+    <value>PLZ/Ort</value>
+  </data>
+  <data name="excel.user.name" xml:space="preserve">
+    <value>Vorname/Nachname</value>
+  </data>
+  <data name="excel.user.not_given" xml:space="preserve">
+    <value>Nicht angegeben</value>
+  </data>
+  <data name="excel.user.street" xml:space="preserve">
+    <value>Straße/Hausnummer</value>
+  </data>
+  <data name="excel.user.telephone" xml:space="preserve">
+    <value>Telephone-Nummer</value>
+  </data>
+  <data name="excel.user.vorname" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
   <data name="global.button.cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
@@ -281,6 +350,9 @@ Unterhalb können sie auch das Rohmaterial, welches geladen werden konnte Kopier
   </data>
   <data name="main.sub.contacts.req.user" xml:space="preserve">
     <value>Der ausgewählte Benutzer konnte nicht gefunden werden? Bitte versuche es nochmal.</value>
+  </data>
+  <data name="main.sub.contacts.save.fail" xml:space="preserve">
+    <value>Fehler beim sichern der Excel-Datei.</value>
   </data>
   <data name="main.sub.contacts.time" xml:space="preserve">
     <value>Bitte füllen Sie das Feld mit der Anzahl an Minuten, welche für die Aerosole mitberechnet werden sollen, aus.</value>

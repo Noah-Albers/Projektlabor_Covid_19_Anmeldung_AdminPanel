@@ -148,6 +148,7 @@
       <DependentUpon>UserSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="utils\EnumPropertyAttribute.cs" />
+    <Compile Include="utils\ExcelUtils.cs" />
     <Compile Include="windows\mainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

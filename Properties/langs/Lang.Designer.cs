@@ -424,6 +424,213 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aerosole.
+        /// </summary>
+        public static string excel_aerosoles {
+            get {
+                return ResourceManager.GetString("excel.aerosoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zurück.
+        /// </summary>
+        public static string excel_button_back {
+            get {
+                return ResourceManager.GetString("excel.button.back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontakt.
+        /// </summary>
+        public static string excel_contacts_contact {
+            get {
+                return ResourceManager.GetString("excel.contacts.contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktzeit.
+        /// </summary>
+        public static string excel_contacts_contactime {
+            get {
+                return ResourceManager.GetString("excel.contacts.contactime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Längste Kontaktzeit.
+        /// </summary>
+        public static string excel_contacts_longesttime {
+            get {
+                return ResourceManager.GetString("excel.contacts.longesttime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mehr.
+        /// </summary>
+        public static string excel_contacts_showmore {
+            get {
+                return ResourceManager.GetString("excel.contacts.showmore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ankunft Kontakt.
+        /// </summary>
+        public static string excel_contacts_start_contact {
+            get {
+                return ResourceManager.GetString("excel.contacts.start.contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ankunft Infezierter.
+        /// </summary>
+        public static string excel_contacts_start_infected {
+            get {
+                return ResourceManager.GetString("excel.contacts.start.infected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abfahrt Kontakt.
+        /// </summary>
+        public static string excel_contacts_stop_contact {
+            get {
+                return ResourceManager.GetString("excel.contacts.stop.contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abfahrt Infezierter.
+        /// </summary>
+        public static string excel_contacts_stop_infected {
+            get {
+                return ResourceManager.GetString("excel.contacts.stop.infected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Übersicht.
+        /// </summary>
+        public static string excel_overview {
+            get {
+                return ResourceManager.GetString("excel.overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktperson.
+        /// </summary>
+        public static string excel_title_contacperson {
+            get {
+                return ResourceManager.GetString("excel.title.contacperson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktpersonen.
+        /// </summary>
+        public static string excel_title_contacts {
+            get {
+                return ResourceManager.GetString("excel.title.contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktzeiten.
+        /// </summary>
+        public static string excel_title_contacttimes {
+            get {
+                return ResourceManager.GetString("excel.title.contacttimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infizierte Person.
+        /// </summary>
+        public static string excel_title_infected {
+            get {
+                return ResourceManager.GetString("excel.title.infected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email-Adresse.
+        /// </summary>
+        public static string excel_user_email {
+            get {
+                return ResourceManager.GetString("excel.user.email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nachname.
+        /// </summary>
+        public static string excel_user_lastname {
+            get {
+                return ResourceManager.GetString("excel.user.lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PLZ/Ort.
+        /// </summary>
+        public static string excel_user_location {
+            get {
+                return ResourceManager.GetString("excel.user.location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vorname/Nachname.
+        /// </summary>
+        public static string excel_user_name {
+            get {
+                return ResourceManager.GetString("excel.user.name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicht angegeben.
+        /// </summary>
+        public static string excel_user_not_given {
+            get {
+                return ResourceManager.GetString("excel.user.not_given", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Straße/Hausnummer.
+        /// </summary>
+        public static string excel_user_street {
+            get {
+                return ResourceManager.GetString("excel.user.street", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone-Nummer.
+        /// </summary>
+        public static string excel_user_telephone {
+            get {
+                return ResourceManager.GetString("excel.user.telephone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vorname.
+        /// </summary>
+        public static string excel_user_vorname {
+            get {
+                return ResourceManager.GetString("excel.user.vorname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
         public static string global_button_cancel {
@@ -546,6 +753,15 @@ namespace projektlabor.covid19login.adminpanel.Properties.langs {
         public static string main_sub_contacts_req_user {
             get {
                 return ResourceManager.GetString("main.sub.contacts.req.user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim sichern der Excel-Datei..
+        /// </summary>
+        public static string main_sub_contacts_save_fail {
+            get {
+                return ResourceManager.GetString("main.sub.contacts.save.fail", resourceCulture);
             }
         }
         
